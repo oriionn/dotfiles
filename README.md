@@ -22,6 +22,7 @@ This repo is dedicated to the configurations I currently use on my desktop.
 ### Utilities
 - [zed](https://archlinux.org/packages/extra/x86_64/zed/)
 - [udiskie](https://archlinux.org/packages/extra/any/udiskie/)
+- [cliphist](https://archlinux.org/packages/extra/x86_64/cliphist/)
 
 ## Credits
 - [walls](https://github.com/dharmx/walls)

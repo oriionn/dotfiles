@@ -15,8 +15,6 @@ configuration {
     }
 }
 
-
-
 entry {
     placeholder: "Calcul";
 }

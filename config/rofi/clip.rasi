@@ -1,0 +1,13 @@
+@import "config"
+
+* {
+    font: 'Symbols Nerd Font Mono 10';
+}
+
+window {
+    width: 600px;
+}
+
+mainbox {
+    children: ["listview"];
+}
