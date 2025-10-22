@@ -83,7 +83,7 @@
   },
   "custom/separator-media": {
     "format": "{text}",
-    "exec": "playerctl metadata --format '|' 2>/dev/null",
+    "exec": "playerctl metadata --format '|' 2>/dev/null | grep .",
     "tooltip": false,
   },
   "custom/separator": {
