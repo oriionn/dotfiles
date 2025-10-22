@@ -16,7 +16,11 @@ cp config/zed/* ~/.config/zed/
 mkdir -p ~/.config/swaync
 cp config/swaync/* ~/.config/swaync
 
+mkdir -p ~/.config/fastfetch
+cp config/fastfetch/* ~/.config/fastfetch
+
 cp config/rofimoji.rc ~/.config/rofimoji.rc
+cp config/hyfetch.json ~/.config/hyfetch.json
 
 mkdir -p ~/.local/share/applications/
 cp applications/* ~/.local/share/applications/
