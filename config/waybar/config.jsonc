@@ -1,0 +1,106 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30, // Waybar height (to be removed for auto height)
+  "spacing": 4, // Gaps between modules (4px)
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock", "custom/separator-media", "custom/media"],
+  "modules-right": ["pulseaudio#volume", "network", "custom/separator", "tray"],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "11": "1",
+      "12": "2",
+      "13": "3",
+      "14": "4",
+      "15": "5",
+      "16": "6",
+      "17": "7",
+      "18": "8",
+      "19": "9",
+      "20": "10",
+    },
+    "show-empty": false,
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+    // "icons": {
+    //   "blueman": "bluetooth",
+    //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    // }
+  },
+  "clock": {
+    "format": "{:L%A %d %B %Y - %H:%M}",
+    "timezone": "Europe/Paris",
+    "locale": "fr_FR.utf8",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "",
+    "format-ethernet": "",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "󱚵",
+    "format-disconnected": "󰖪",
+  },
+  "pulseaudio#volume": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "<span size='11000'>{icon}</span>",
+    "format-muted": "<span size='11100'></span>",
+    "format-icons": {
+      "default": ["", "", ""],
+    },
+    "on-click": "pavucontrol",
+  },
+  "custom/media": {
+    "format": "{icon} {text}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "<span size='11000'></span>",
+      "firefox": "<span size='11000'>󰈹</span>",
+      "default": "<span size='11000'></span>",
+    },
+    "escape": true,
+    "exec": "playerctl metadata --format '{ \"text\": \"{{ title }} • {{ artist }}\", \"alt\": \"{{ playerName }}\" }' 2> /dev/null",
+    "exec-if": "which playerctl",
+    "on-click": "playerctl play-pause",
+    "tooltip": true,
+    "tooltip-format": "{text}",
+    "interval": 1,
+  },
+  "custom/separator-media": {
+    "format": "{text}",
+    "exec": "playerctl metadata --format '|' 2>/dev/null | grep .",
+    "tooltip": false,
+  },
+  "custom/separator": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false,
+  },
+  // "custom/power": {
+  // "format": "⏻ ",
+  // "tooltip": false,
+  // "menu": "on-click",
+  // "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+  // "menu-actions": {
+  // "shutdown": "shutdown",
+  // "reboot": "reboot",
+  // "suspend": "systemctl suspend",
+  // "hibernate": "systemctl hibernate",
+  //  },
+  // },
+}

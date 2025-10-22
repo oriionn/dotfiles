@@ -1,0 +1,83 @@
+{
+    "theme": {
+        "mode": "dark",
+        "light": "One Light",
+        "dark": "One Dark Pro"
+    },
+    "autosave": "off",
+    "agent": {
+        "default_profile": "ask",
+        "default_model": {
+            "provider": "openrouter",
+            "model": "anthropic/claude-opus-4"
+        }
+    },
+    "restore_on_startup": "last_session",
+    "base_keymap": "VSCode",
+    "edit_predictions": {
+        "disabled_globs": ["**"]
+    },
+    "show_edit_predictions": false,
+    "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+    "ui_font_family": "JetBrainsMono Nerd Font Mono",
+    "ui_font_size": 15,
+    "buffer_font_size": 14,
+    "collaboration_panel": {
+        "button": false
+    },
+    "git_panel": {
+        "dock": null
+    },
+    "terminal": {
+        "dock": "right",
+        "scrollbar": {
+            "show": "never"
+        },
+        "cursor_shape": "bar",
+        "font_family": "JetBrainsMono Nerd Font Mono"
+    },
+    "tab_size": 4,
+    "scrollbar": {
+        "show": "never"
+    },
+    "languages": {
+        "Java": {
+            "show_edit_predictions": true
+        },
+        "Python": {
+            "language_servers": ["ruff"],
+            "format_on_save": "on",
+            "formatter": [
+                {
+                    "code_actions": {
+                        "source.fixAll.ruff": true,
+                        "source.organizeImports.ruff": true
+                    }
+                },
+                {
+                    "language_server": {
+                        "name": "ruff"
+                    }
+                }
+            ]
+        }
+    },
+    "title_bar": {
+        "show_branch_icon": true,
+        "show_user_picture": true,
+        "show_onboarding_banner": false
+    },
+    "telemetry": {
+        "metrics": false,
+        "diagnostics": false
+    },
+    "calls": {
+        "mute_on_join": true
+    },
+    "tab_bar": {
+        "show_nav_history_buttons": false,
+        "show_tab_bar_buttons": false
+    },
+    "format_on_save": "off",
+    "use_on_type_format": false
+}

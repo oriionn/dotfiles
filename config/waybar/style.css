@@ -1,0 +1,59 @@
+* {
+    font-family:
+        Symbols Nerd Font Mono,
+        Arial,
+        sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: #191a23;
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#workspaces button:hover,
+#workspaces button.active {
+    color: rgba(255, 255, 255, 1);
+}
+
+#clock,
+#network,
+#pulseaudio,
+#tray,
+#custom-media {
+    padding: 5px;
+    color: #ffffff;
+}
+
+#custom-separator,
+#custom-separator-media {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#tray {
+    margin-right: 5px;
+}

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Calculatrice
+Exec=rofi -show calc -modi calc -no-show-match -no-sort -config ~/.config/rofi/calc.rasi
+Icon=~/dotfiles/assets/icons/calculator.png
+Terminal=false
+Categories=Utility;
