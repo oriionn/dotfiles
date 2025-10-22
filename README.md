@@ -23,6 +23,7 @@ This repo is dedicated to the configurations I currently use on my desktop.
 - [zed](https://archlinux.org/packages/extra/x86_64/zed/)
 - [udiskie](https://archlinux.org/packages/extra/any/udiskie/)
 - [cliphist](https://archlinux.org/packages/extra/x86_64/cliphist/)
+- [nwg-bar](https://archlinux.org/packages/extra/x86_64/nwg-bar/)
 
 ## Credits
 - [walls](https://github.com/dharmx/walls)
