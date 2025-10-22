@@ -13,5 +13,7 @@ cp config/rofi/* ~/.config/rofi/
 mkdir -p ~/.config/zed
 cp config/zed/* ~/.config/zed/
 
+cp config/rofimoji.rc ~/.config/rofimoji.rc
+
 mkdir -p ~/.local/share/applications/
 cp applications/* ~/.local/share/applications/

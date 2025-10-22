@@ -9,6 +9,7 @@ This repo is dedicated to the configurations I currently use on my desktop.
 ### App launcher
 - [rofi](https://archlinux.org/packages/extra/x86_64/rofi/)
 - [rofi-calc](https://archlinux.org/packages/extra/x86_64/rofi-calc/)
+- [rofimoji](https://archlinux.org/packages/extra/any/rofimoji/)
 
 ### Bar
 - [waybar](https://archlinux.org/packages/extra/x86_64/waybar/)
