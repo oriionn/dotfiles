@@ -13,6 +13,9 @@ cp config/rofi/* ~/.config/rofi/
 mkdir -p ~/.config/zed
 cp config/zed/* ~/.config/zed/
 
+mkdir -p ~/.config/swaync
+cp config/swaync/* ~/.config/swaync
+
 cp config/rofimoji.rc ~/.config/rofimoji.rc
 
 mkdir -p ~/.local/share/applications/

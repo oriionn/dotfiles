@@ -6,7 +6,7 @@
   "spacing": 4, // Gaps between modules (4px)
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock", "custom/separator-media", "custom/media"],
-  "modules-right": ["pulseaudio#volume", "network", "custom/separator", "tray"],
+  "modules-right": ["pulseaudio#volume", "network", "custom/notifications", "custom/separator", "tray"],
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
@@ -85,6 +85,11 @@
     "format": "{text}",
     "exec": "playerctl metadata --format '|' 2>/dev/null | grep .",
     "tooltip": false,
+  },
+  "custom/notifications": {
+      "format": "",
+      "on-click": "swaync-client --toggle-panel",
+      "tooltip": false
   },
   "custom/separator": {
     "format": "|",

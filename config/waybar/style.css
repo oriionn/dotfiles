@@ -26,7 +26,8 @@ window#waybar {
 #network,
 #pulseaudio,
 #tray,
-#custom-media {
+#custom-media,
+#custom-notifications {
     padding: 5px;
     color: #ffffff;
 }

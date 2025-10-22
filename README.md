@@ -19,6 +19,9 @@ This repo is dedicated to the configurations I currently use on my desktop.
 ### Display manager
 - [ly](https://archlinux.org/packages/extra/x86_64/ly/)
 
+### Notification Daemon
+- [swaync](https://archlinux.org/packages/extra/x86_64/swaync/)
+
 ### Utilities
 - [zed](https://archlinux.org/packages/extra/x86_64/zed/)
 - [udiskie](https://archlinux.org/packages/extra/any/udiskie/)
