@@ -5,6 +5,8 @@ This repo is dedicated to the configurations I currently use on my desktop.
 ### Wayland Compositor (and his ecosystem)
 - [hyprland](https://archlinux.org/packages/extra/x86_64/hyprland/)
 - [hyprpaper](https://archlinux.org/packages/extra/x86_64/hyprpaper/)
+- [xdg-desktop-portal-hyprland](https://archlinux.org/packages/extra/x86_64/xdg-desktop-portal-hyprland/)
+- [hyprpolkitagent](https://archlinux.org/packages/extra/x86_64/hyprpolkitagent/)
 
 ### App launcher
 - [rofi](https://archlinux.org/packages/extra/x86_64/rofi/)
@@ -19,6 +21,7 @@ This repo is dedicated to the configurations I currently use on my desktop.
 
 ### Utilities
 - [zed](https://archlinux.org/packages/extra/x86_64/zed/)
+- [udiskie](https://archlinux.org/packages/extra/any/udiskie/)
 
 ## Credits
 - [walls](https://github.com/dharmx/walls)
