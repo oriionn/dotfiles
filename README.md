@@ -28,6 +28,9 @@ This repo is dedicated to the configurations I currently use on my desktop.
 - [cliphist](https://archlinux.org/packages/extra/x86_64/cliphist/)
 - [nwg-bar](https://archlinux.org/packages/extra/x86_64/nwg-bar/)
 
+- [fastfetch](https://archlinux.org/packages/extra/x86_64/fastfetch/)
+- [hyfetch](https://archlinux.org/packages/extra/x86_64/hyfetch/)
+
 ## Credits
 - [walls](https://github.com/dharmx/walls)
 - [Lucide Icons](https://lucide.dev/)
