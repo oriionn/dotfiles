@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=kDrive
+Exec=/home/orion/dotfiles/bin/kDrive.AppImage
+Icon=~/dotfiles/assets/icons/kdrive.png
+Terminal=false
+Categories=Utility;
