@@ -30,7 +30,9 @@ This repo is dedicated to the configurations I currently use on my desktop.
 - [fastfetch](https://archlinux.org/packages/extra/x86_64/fastfetch/)
 - [hyfetch](https://archlinux.org/packages/extra/x86_64/hyfetch/)
 
-### Zsh
+### Terminal
+- [ghostty](https://archlinux.org/packages/extra/x86_64/ghostty/)
+- [zsh](https://archlinux.org/packages/extra/x86_64/zsh/)
 - [zinit](https://github.com/zdharma-continuum/zinit)
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k#zinit)
 

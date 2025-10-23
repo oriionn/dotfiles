@@ -19,6 +19,9 @@ cp config/swaync/* ~/.config/swaync
 mkdir -p ~/.config/fastfetch
 cp config/fastfetch/* ~/.config/fastfetch
 
+mkdir -p ~/.config/ghostty
+cp config/ghostty/* ~/.config/ghostty
+
 cp config/rofimoji.rc ~/.config/rofimoji.rc
 cp config/hyfetch.json ~/.config/hyfetch.json
 

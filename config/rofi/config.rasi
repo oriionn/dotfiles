@@ -1,5 +1,5 @@
 * {
-    font: 'Symbols Nerd Font Mono';
+    font: 'JetBrainsMono NFM';
     bg: #191a23;
     fg: #fff;
 }
