@@ -7,6 +7,8 @@ This repo is dedicated to the configurations I currently use on my desktop.
 - [hyprpaper](https://archlinux.org/packages/extra/x86_64/hyprpaper/)
 - [xdg-desktop-portal-hyprland](https://archlinux.org/packages/extra/x86_64/xdg-desktop-portal-hyprland/)
 - [hyprpolkitagent](https://archlinux.org/packages/extra/x86_64/hyprpolkitagent/)
+- [hyprlock](https://archlinux.org/packages/extra/x86_64/hyprlock/)
+- [hypridle](https://archlinux.org/packages/extra/x86_64/hypridle/)
 
 ### App launcher
 - [rofi](https://archlinux.org/packages/extra/x86_64/rofi/)
