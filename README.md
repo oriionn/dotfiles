@@ -50,6 +50,7 @@ This repo is dedicated to the configurations I currently use on my desktop.
 ## Credits
 - [walls](https://github.com/dharmx/walls)
 - [Lucide Icons](https://lucide.dev/)
+- [zDyant/HyprNova](https://github.com/zDyant/HyprNova/tree/master) for the hypridle/hyprlock config
 
 ## Installation
 To install the dotfiles, there is only one script, which simply copies the configuration files, so you must install the packages yourself.
