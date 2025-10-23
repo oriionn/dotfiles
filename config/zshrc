@@ -61,6 +61,7 @@ bindkey '^[[B' history-search-forward
 
 # Aliases
 alias fastfetch='fastfetch --kitty ~/dotfiles/assets/arch_bi.png'
+alias fetch='fastfetch'
 alias ls='eza --icons --group-directories-first --hyperlink'
 alias grep='grep --color=auto'
 alias cd='z'
