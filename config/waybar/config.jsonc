@@ -85,6 +85,7 @@
     "format": "{text}",
     "exec": "playerctl metadata --format '|' 2>/dev/null | grep .",
     "tooltip": false,
+    "interval": 1
   },
   "custom/notifications": {
       "format": "",
