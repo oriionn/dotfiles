@@ -22,6 +22,9 @@ cp config/fastfetch/* ~/.config/fastfetch
 mkdir -p ~/.config/ghostty
 cp config/ghostty/* ~/.config/ghostty
 
+mkdir -p ~/.config/arch-update
+cp config/arch-update/* ~/.config/arch-update
+
 cp config/rofimoji.rc ~/.config/rofimoji.rc
 cp config/hyfetch.json ~/.config/hyfetch.json
 

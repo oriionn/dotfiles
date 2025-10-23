@@ -43,6 +43,7 @@ This repo is dedicated to the configurations I currently use on my desktop.
 - [eza](https://archlinux.org/packages/extra/x86_64/eza/)
 - [pkgfile](https://archlinux.org/packages/extra/x86_64/pkgfile/)
 - [kdeconnect](https://archlinux.org/packages/extra/x86_64/kdeconnect/)
+- [arch-update](https://aur.archlinux.org/packages/arch-update)
 
 ## Credits
 - [walls](https://github.com/dharmx/walls)
