@@ -24,3 +24,8 @@ cp config/hyfetch.json ~/.config/hyfetch.json
 
 mkdir -p ~/.local/share/applications/
 cp applications/* ~/.local/share/applications/
+
+LINE='source ~/dotfiles/config/zshrc'
+if ! grep -Fxq "$LINE" "$HOME/.zshrc"; then
+    echo "$LINE" >> "$HOME/.zshrc"
+fi

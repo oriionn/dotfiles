@@ -1,0 +1,66 @@
+# Syntax Highlighting
+zinit light zsh-users/zsh-syntax-highlighting
+
+# Autcompletions
+zinit light zsh-users/zsh-completions
+autoload -U compinit && compinit
+zinit snippet OMZP::bun
+zinit snippet OMZP::docker
+zinit snippet OMZP::docker-compose
+zinit snippet OMZP::flutter
+
+# Autosuggestions
+zinit light zsh-users/zsh-autosuggestions
+
+# Background Notify
+bgnotify_threshold=8
+zinit snippet OMZP::bgnotify
+
+# Command not found
+zinit snippet OMZP::command-not-found
+
+# Auto load dotenv
+zinit snippet OMZP::dotenv
+
+# Colored contents
+zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::colorize
+
+# Base64
+zinit snippet OMZP::encode64
+
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+# Fzf
+eval "$(fzf --zsh)"
+zinit light Aloxaf/fzf-tab
+
+# Zoxide
+eval "$(zoxide init zsh)"
+
+# Keybindings
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+# Aliases
+alias fastfetch='fastfetch --kitty ~/dotfiles/assets/arch_bi.png'
+alias ls='eza --icons --group-directories-first --hyperlink'
+alias grep='grep --color=auto'
+alias cd='z'

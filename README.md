@@ -30,10 +30,17 @@ This repo is dedicated to the configurations I currently use on my desktop.
 - [fastfetch](https://archlinux.org/packages/extra/x86_64/fastfetch/)
 - [hyfetch](https://archlinux.org/packages/extra/x86_64/hyfetch/)
 
+### Zsh
+- [zinit](https://github.com/zdharma-continuum/zinit)
+- [powerlevel10k](https://github.com/romkatv/powerlevel10k#zinit)
+
 ### Utilities
 - [zed](https://archlinux.org/packages/extra/x86_64/zed/)
 - [udiskie](https://archlinux.org/packages/extra/any/udiskie/)
 - [nwg-bar](https://archlinux.org/packages/extra/x86_64/nwg-bar/)
+- [eza](https://archlinux.org/packages/extra/x86_64/eza/)
+- [pkgfile](https://archlinux.org/packages/extra/x86_64/pkgfile/)
+- [kdeconnect](https://archlinux.org/packages/extra/x86_64/kdeconnect/)
 
 ## Credits
 - [walls](https://github.com/dharmx/walls)
