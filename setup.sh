@@ -25,6 +25,9 @@ cp config/ghostty/* ~/.config/ghostty
 mkdir -p ~/.config/arch-update
 cp config/arch-update/* ~/.config/arch-update
 
+mkdir -p ~/.config/nwg-waybar
+cp config/nwg-bar/* ~/.config/nwg-bar
+
 cp config/rofimoji.rc ~/.config/rofimoji.rc
 cp config/hyfetch.json ~/.config/hyfetch.json
 
