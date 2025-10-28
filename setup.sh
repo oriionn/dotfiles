@@ -20,7 +20,7 @@ mkdir -p ~/.config/fastfetch
 cp config/fastfetch/* ~/.config/fastfetch
 
 mkdir -p ~/.config/ghostty
-cp config/ghostty/* ~/.config/ghostty
+cp -r config/ghostty/* ~/.config/ghostty
 
 mkdir -p ~/.config/arch-update
 cp config/arch-update/* ~/.config/arch-update
@@ -36,5 +36,5 @@ cp applications/* ~/.local/share/applications/
 
 LINE='source ~/dotfiles/config/zshrc'
 if ! grep -Fxq "$LINE" "$HOME/.zshrc"; then
-    echo "$LINE" >> "$HOME/.zshrc"
+  echo "$LINE" >>"$HOME/.zshrc"
 fi
