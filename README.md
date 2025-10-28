@@ -56,6 +56,7 @@ This repo is dedicated to the configurations I currently use on my desktop.
 To install the dotfiles, there is only one script, which simply copies the configuration files, so you must install the packages yourself.
 
 ```sh
+git submodule init
 chmod +x setup.sh
 ./setup.sh
 ```
