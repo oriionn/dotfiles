@@ -7,9 +7,6 @@ cp -r config/hypr/* ~/.config/hypr/
 mkdir -p ~/.config/waybar/
 cp -r config/waybar/* ~/.config/waybar/
 
-mkdir -p ~/.config/rofi
-cp -r config/rofi/* ~/.config/rofi/
-
 mkdir -p ~/.config/zed
 cp -r config/zed/* ~/.config/zed/
 
@@ -28,7 +25,6 @@ cp -r config/arch-update/* ~/.config/arch-update
 mkdir -p ~/.config/nwg-waybar
 cp -r config/nwg-bar/* ~/.config/nwg-bar
 
-cp config/rofimoji.rc ~/.config/rofimoji.rc
 cp config/hyfetch.json ~/.config/hyfetch.json
 
 mkdir -p ~/.local/share/applications/

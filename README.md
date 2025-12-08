@@ -11,9 +11,7 @@ This repo is dedicated to the configurations I currently use on my desktop.
 - [hypridle](https://archlinux.org/packages/extra/x86_64/hypridle/)
 
 ### App launcher
-- [rofi](https://archlinux.org/packages/extra/x86_64/rofi/)
-- [rofi-calc](https://archlinux.org/packages/extra/x86_64/rofi-calc/)
-- [rofimoji](https://archlinux.org/packages/extra/any/rofimoji/)
+- [vicinae-bin](https://aur.archlinux.org/packages/vicinae-bin)
 
 ### Bar
 - [waybar](https://archlinux.org/packages/extra/x86_64/waybar/)
