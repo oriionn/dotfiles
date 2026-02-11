@@ -22,7 +22,7 @@ cp -r config/ghostty/* ~/.config/ghostty
 mkdir -p ~/.config/arch-update
 cp -r config/arch-update/* ~/.config/arch-update
 
-mkdir -p ~/.config/nwg-waybar
+mkdir -p ~/.config/nwg-bar
 cp -r config/nwg-bar/* ~/.config/nwg-bar
 
 cp config/hyfetch.json ~/.config/hyfetch.json
