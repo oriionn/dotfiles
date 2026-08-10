@@ -42,6 +42,7 @@ in
 
         # Hyprland
         unstable.hyprpolkitagent
+        unstable.hyprlock
         unstable.hypridle
 
         # Fonts
@@ -69,6 +70,9 @@ in
             };
         };
     };
+
+    # Fingerprint Scanner
+    services.fprintd.enable = true;
 
     # Users
     users.users.orion.extraGroups = [ "networkmanager" "wheel" ];
