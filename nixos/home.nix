@@ -20,5 +20,15 @@ in
         recursive = true;
     };
 
+    xdg.configFile."waybar" = {
+        source = ../config/waybar;
+        recursive = true;
+    };
+
+    xdg.configFile."nwg-bar" = {
+        source = ../config/nwg-bar;
+        recursive = true;
+    };
+
     home.stateVersion = "26.05";
 }

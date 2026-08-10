@@ -31,6 +31,10 @@ in
         vlc
         firefox
 
+        # Audio
+        playerctl
+        pavucontrol
+
         # Social Media
         vesktop
 
@@ -39,6 +43,7 @@ in
         udiskie
         vicinae
         swaynotificationcenter
+        nwg-bar
 
         # Hyprland
         unstable.hyprpolkitagent
