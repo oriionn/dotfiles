@@ -9,4 +9,6 @@
         konsole
         elisa
     ];
+
+    programs.kdeconnect.enable = true;
 }

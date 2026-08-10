@@ -1,7 +1,12 @@
 { config, pkgs, ... }:
 
 let
-  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz;
+  home-manager = builtins.fetchTarball
+    "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz";
+
+  unstable = import (builtins.fetchTarball
+    "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz"
+  ) {};
 in
 {
     imports =
@@ -25,6 +30,20 @@ in
         # Multimedia
         vlc
         firefox
+
+        # Social Media 
+        vesktop
+
+        # Utilities
+        waybar
+        udiskie
+        vicinae
+        swaynotificationcenter
+
+        # Hyprland
+        unstable.hyprpaper
+        unstable.hyprpolkitagent
+        unstable.hypridle
 
         # Fonts
         nerd-fonts.jetbrains-mono
