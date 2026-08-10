@@ -12,8 +12,6 @@ in
         enable = true;
         package = unstable.hyprpaper;
 
-        systemdTarget = "hyprland-session.target";
-
         settings = {
             wallpaper = [
                 {
