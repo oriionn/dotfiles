@@ -8,197 +8,497 @@ in
 {
     wayland.windowManager.hyprland = {
         enable = true;
+
         systemd.enable = false;
 
         package = unstable.hyprland;
         portalPackage = unstable.xdg-desktop-portal-hyprland;
+
         xwayland.enable = true;
 
-        settings = {
-            "$mod" = "SUPER";
-            "$terminal" = "ghostty";
-            "$fileManager" = "thunar";
-            "$menu" = "vicinae open";
+        configType = "lua";
 
-            exec-once = [
-                "waybar"
-                "udiskie"
-                "systemctl --user start hyprpolkitagent"
-                "vicinae server"
-                "swaync"
-                "hyperidle"
-                "kdeconnect-indicator"
-                "vesktop"
-            ];
+        extraConfig = ''
+        --------------------------------
+        -- VARIABLES
+        --------------------------------
 
+        local mod = "SUPER"
+        local terminal = "ghostty"
+        local fileManager = "thunar"
+        local menu = "vicinae open"
+
+
+        --------------------------------
+        -- AUTOSTART
+        --------------------------------
+
+        hl.on("hyprland.start", function()
+            hl.exec_cmd("waybar")
+            hl.exec_cmd("udiskie")
+            hl.exec_cmd("systemctl --user start hyprpolkitagent")
+            hl.exec_cmd("vicinae server")
+            hl.exec_cmd("swaync")
+            hl.exec_cmd("hyperidle")
+            hl.exec_cmd("kdeconnect-indicator")
+            hl.exec_cmd("vesktop")
+        end)
+
+
+        --------------------------------
+        -- INPUT
+        --------------------------------
+
+        hl.config({
             input = {
-                kb_layout = "fr";
-                kb_variant = "";
-                kb_model = "";
-                kb_options = "";
-                kb_rules = "";
+            kb_layout = "fr",
+            kb_variant = "",
+            kb_model = "",
+            kb_options = "",
+            kb_rules = "",
 
-                numlock_by_default = true;
+            numlock_by_default = true,
 
-                accel_profile = "flat";
-                follow_mouse = 1;
-                force_no_accel = 1;
-                sensitivity = 0.0;
+            accel_profile = "flat",
+            follow_mouse = 1,
+            force_no_accel = 1,
+            sensitivity = 0.0,
 
-                touchpad = {
-                  natural_scroll = false;
-                };
-            };
+            touchpad = {
+                natural_scroll = false,
+            },
+            },
+        })
 
-            bind = [
-                # Terminal
-                "$mod, Q, exec, $terminal"
 
-                # Kill current window
-                "$mod, C, killactive"
+        --------------------------------
+        -- APPLICATIONS
+        --------------------------------
 
-                # Power off menu
-                "$mod, M, exec, nwg-bar"
+        -- Terminal
+        hl.bind(
+            mod .. " + Q",
+            hl.dsp.exec_cmd(terminal)
+        )
 
-                # Shutdown
-                "$mod SHIFT, Alt_L, exec, shutdown now"
+        -- Kill current window
+        hl.bind(
+            mod .. " + C",
+            hl.dsp.window.close()
+        )
 
-                # File manager
-                "$mod, E, exec, $fileManager"
+        -- Power menu
+        hl.bind(
+            mod .. " + M",
+            hl.dsp.exec_cmd("nwg-bar")
+        )
 
-                # Float window
-                "$mod, F, togglefloating"
+        -- Shutdown
+        hl.bind(
+            mod .. " + SHIFT + ALT_L",
+            hl.dsp.exec_cmd("shutdown now")
+        )
 
-                # Clipboard history
-                "$mod, V, exec, vicinae vicinae://extensions/vicinae/clipboard/history"
+        -- File manager
+        hl.bind(
+            mod .. " + E",
+            hl.dsp.exec_cmd(fileManager)
+        )
 
-                # App launcher
-                "Alt_L, code:65, exec, $menu"
+        -- Toggle floating
+        hl.bind(
+            mod .. " + F",
+            hl.dsp.window.float({
+            action = "toggle"
+            })
+        )
 
-                # Screenshot
-                "$mod SHIFT, S, exec, quickshell -c hyprquickshot -n"
+        -- Clipboard history
+        hl.bind(
+            mod .. " + V",
+            hl.dsp.exec_cmd(
+            "vicinae vicinae://extensions/vicinae/clipboard/history"
+            )
+        )
 
-                # Color picker
-                "$mod SHIFT, C, exec, hyprpicker -a"
+        -- App launcher
+        hl.bind(
+            "ALT + code:65",
+            hl.dsp.exec_cmd(menu)
+        )
 
-                # Emoji picker
-                "$mod, code:59, exec, vicinae vicinae://extensions/vicinae/vicinae/search-emojis"
+        -- Screenshot
+        hl.bind(
+            mod .. " + SHIFT + S",
+            hl.dsp.exec_cmd(
+            "quickshell -c hyprquickshot -n"
+            )
+        )
 
-                # Calculator
-                ", XF86Calculator, exec, vicinae vicinae://extensions/vicinae/calculator/history"
+        -- Color picker
+        hl.bind(
+            mod .. " + SHIFT + C",
+            hl.dsp.exec_cmd(
+            "hyprpicker -a"
+            )
+        )
 
-                # Lock session
-                "$mod, L, exec, loginctl lock-session"
+        -- Emoji picker
+        hl.bind(
+            mod .. " + code:59",
+            hl.dsp.exec_cmd(
+            "vicinae vicinae://extensions/vicinae/vicinae/search-emojis"
+            )
+        )
 
-                # Focus
-                "$mod, left, movefocus, l"
-                "$mod, right, movefocus, r"
-                "$mod, up, movefocus, u"
-                "$mod, down, movefocus, d"
+        -- Calculator
+        hl.bind(
+            "XF86Calculator",
+            hl.dsp.exec_cmd(
+            "vicinae vicinae://extensions/vicinae/calculator/history"
+            )
+        )
 
-                # Workspaces
-                "$mod, KP_End, split:workspace, 1"
-                "$mod, KP_Down, split:workspace, 2"
-                "$mod, KP_Next, split:workspace, 3"
-                "$mod, KP_Left, split:workspace, 4"
-                "$mod, KP_Begin, split:workspace, 5"
-                "$mod, KP_Right, split:workspace, 6"
-                "$mod, KP_Home, split:workspace, 7"
-                "$mod, KP_Up, split:workspace, 8"
-                "$mod, KP_Prior, split:workspace, 9"
-                "$mod, KP_Insert, split:workspace, 10"
+        -- Lock session
+        hl.bind(
+            mod .. " + L",
+            hl.dsp.exec_cmd(
+            "loginctl lock-session"
+            )
+        )
 
-                # Move window to workspace
-                "$mod SHIFT, KP_End, split:movetoworkspace, 1"
-                "$mod SHIFT, KP_Down, split:movetoworkspace, 2"
-                "$mod SHIFT, KP_Next, split:movetoworkspace, 3"
-                "$mod SHIFT, KP_Left, split:movetoworkspace, 4"
-                "$mod SHIFT, KP_Begin, split:movetoworkspace, 5"
-                "$mod SHIFT, KP_Right, split:movetoworkspace, 6"
-                "$mod SHIFT, KP_Home, split:movetoworkspace, 7"
-                "$mod SHIFT, KP_Up, split:movetoworkspace, 8"
-                "$mod SHIFT, KP_Prior, split:movetoworkspace, 9"
-                "$mod SHIFT, KP_Insert, split:movetoworkspace, 10"
 
-                # Scroll through workspaces
-                "$mod, mouse_down, workspace, e+1"
-                "$mod, mouse_up, workspace, e-1"
-            ];
+        --------------------------------
+        -- FOCUS
+        --------------------------------
 
-            bindm = [
-                "$mod, mouse:272, movewindow"
-                "$mod, mouse:273, resizewindow"
-            ];
+        hl.bind(
+            mod .. " + left",
+            hl.dsp.focus({
+            direction = "left"
+            })
+        )
 
-            # Volume + brightness
-            bindel = [
-                ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-                ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-                ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-                ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-                ", XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
-                ", XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
-            ];
+        hl.bind(
+            mod .. " + right",
+            hl.dsp.focus({
+            direction = "right"
+            })
+        )
 
-            # Media keys
-            bindl = [
-                ", XF86AudioNext, exec, playerctl next"
-                ", XF86AudioPause, exec, playerctl play-pause"
-                ", XF86AudioPlay, exec, playerctl play-pause"
-                ", XF86AudioPrev, exec, playerctl previous"
-            ];
+        hl.bind(
+            mod .. " + up",
+            hl.dsp.focus({
+            direction = "up"
+            })
+        )
 
-            window_rule = [
-                # Ignore maximize requests from apps
-                {
-                    match.class = ".*";
-                    suppress_event = "maximize";
-                }
+        hl.bind(
+            mod .. " + down",
+            hl.dsp.focus({
+            direction = "down"
+            })
+        )
 
-                # Fix some dragging issues with XWayland
-                {
-                    match = {
-                        class = "^$";
-                        title = "^$";
-                        xwayland = true;
-                        float = true;
-                        fullscreen = false;
-                        pin = false;
-                    };
 
-                    no_focus = true;
-                }
+        --------------------------------
+        -- WORKSPACES
+        --------------------------------
 
-                # Clipse
-                {
-                    match.class = "clipse-gui";
+        -- Pavé numérique :
+        --
+        -- KP_End    = 1
+        -- KP_Down   = 2
+        -- KP_Next   = 3
+        -- KP_Left   = 4
+        -- KP_Begin  = 5
+        -- KP_Right  = 6
+        -- KP_Home   = 7
+        -- KP_Up     = 8
+        -- KP_Prior  = 9
+        -- KP_Insert = 0 / workspace 10
 
-                    float = true;
-                    size = [ 622 652 ];
-                    stay_focused = true;
-                }
+        local workspaceKeys = {
+            "KP_End",
+            "KP_Down",
+            "KP_Next",
+            "KP_Left",
+            "KP_Begin",
+            "KP_Right",
+            "KP_Home",
+            "KP_Up",
+            "KP_Prior",
+            "KP_Insert",
+        }
 
-                # GNOME Clocks
-                {
-                    match.class = "org.gnome.clocks";
+        for i, key in ipairs(workspaceKeys) do
 
-                    float = true;
-                    pin = true;
-                    size = [ 600 450 ];
-                }
+            -- SUPER + Numpad
+            -- Change de workspace
+            hl.bind(
+            mod .. " + " .. key,
+            hl.dsp.focus({
+                workspace = i
+            })
+            )
 
-                # Wakfu fullscreen
-                {
-                    match.class = "com-ankamagames-wakfu-client-WakfuClient";
-                    fullscreen = true;
-                }
+            -- SUPER + SHIFT + Numpad
+            -- Déplace la fenêtre vers le workspace
+            hl.bind(
+            mod .. " + SHIFT + " .. key,
+            hl.dsp.window.move({
+                workspace = i
+            })
+            )
+        end
 
-                # Balatro fullscreen
-                {
-                    match.class = "steam_app_2379780";
-                    fullscreen = true;
-                }
-            ];
-        };
+
+        --------------------------------
+        -- WORKSPACE SCROLL
+        --------------------------------
+
+        hl.bind(
+            mod .. " + mouse_down",
+            hl.dsp.focus({
+            workspace = "e+1"
+            })
+        )
+
+        hl.bind(
+            mod .. " + mouse_up",
+            hl.dsp.focus({
+            workspace = "e-1"
+            })
+        )
+
+
+        --------------------------------
+        -- MOUSE
+        --------------------------------
+
+        -- SUPER + clic gauche = déplacer fenêtre
+        hl.bind(
+            mod .. " + mouse:272",
+            hl.dsp.window.drag(),
+            {
+            mouse = true
+            }
+        )
+
+        -- SUPER + clic droit = resize fenêtre
+        hl.bind(
+            mod .. " + mouse:273",
+            hl.dsp.window.resize(),
+            {
+            mouse = true
+            }
+        )
+
+
+        --------------------------------
+        -- VOLUME
+        --------------------------------
+
+        hl.bind(
+            "XF86AudioRaiseVolume",
+            hl.dsp.exec_cmd(
+            "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+            ),
+            {
+            locked = true,
+            repeating = true
+            }
+        )
+
+        hl.bind(
+            "XF86AudioLowerVolume",
+            hl.dsp.exec_cmd(
+            "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+            ),
+            {
+            locked = true,
+            repeating = true
+            }
+        )
+
+        hl.bind(
+            "XF86AudioMute",
+            hl.dsp.exec_cmd(
+            "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+            ),
+            {
+            locked = true,
+            repeating = true
+            }
+        )
+
+        hl.bind(
+            "XF86AudioMicMute",
+            hl.dsp.exec_cmd(
+            "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+            ),
+            {
+            locked = true,
+            repeating = true
+            }
+        )
+
+
+        --------------------------------
+        -- BRIGHTNESS
+        --------------------------------
+
+        hl.bind(
+            "XF86MonBrightnessUp",
+            hl.dsp.exec_cmd(
+            "brightnessctl -e4 -n2 set 5%+"
+            ),
+            {
+            locked = true,
+            repeating = true
+            }
+        )
+
+        hl.bind(
+            "XF86MonBrightnessDown",
+            hl.dsp.exec_cmd(
+            "brightnessctl -e4 -n2 set 5%-"
+            ),
+            {
+            locked = true,
+            repeating = true
+            }
+        )
+
+
+        --------------------------------
+        -- MEDIA
+        --------------------------------
+
+        hl.bind(
+            "XF86AudioNext",
+            hl.dsp.exec_cmd(
+            "playerctl next"
+            ),
+            {
+            locked = true
+            }
+        )
+
+        hl.bind(
+            "XF86AudioPause",
+            hl.dsp.exec_cmd(
+            "playerctl play-pause"
+            ),
+            {
+            locked = true
+            }
+        )
+
+        hl.bind(
+            "XF86AudioPlay",
+            hl.dsp.exec_cmd(
+            "playerctl play-pause"
+            ),
+            {
+            locked = true
+            }
+        )
+
+        hl.bind(
+            "XF86AudioPrev",
+            hl.dsp.exec_cmd(
+            "playerctl previous"
+            ),
+            {
+            locked = true
+            }
+        )
+
+
+        --------------------------------
+        -- WINDOW RULES
+        --------------------------------
+
+        -- Ignore maximize requests
+        hl.window_rule({
+            name = "suppress-maximize-events",
+
+            match = {
+            class = ".*"
+            },
+
+            suppress_event = "maximize",
+        })
+
+
+        -- Fix XWayland dragging
+        hl.window_rule({
+            name = "fix-xwayland-drags",
+
+            match = {
+            class = "^$",
+            title = "^$",
+            xwayland = true,
+            float = true,
+            fullscreen = false,
+            pin = false,
+            },
+
+            no_focus = true,
+        })
+
+
+        -- Clipse
+        hl.window_rule({
+            name = "clipse",
+
+            match = {
+            class = "clipse-gui"
+            },
+
+            float = true,
+            size = { 622, 652 },
+            stay_focused = true,
+        })
+
+
+        -- GNOME Clocks
+        hl.window_rule({
+            name = "gnome-clocks",
+
+            match = {
+            class = "org.gnome.clocks"
+            },
+
+            float = true,
+            pin = true,
+            size = { 600, 450 },
+        })
+
+
+        -- Wakfu
+        hl.window_rule({
+            name = "wakfu-fullscreen",
+
+            match = {
+            class = "com-ankamagames-wakfu-client-WakfuClient"
+            },
+
+            fullscreen = true,
+        })
+
+
+        -- Balatro
+        hl.window_rule({
+            name = "balatro-fullscreen",
+
+            match = {
+            class = "steam_app_2379780"
+            },
+
+            fullscreen = true,
+        })
+        '';
     };
 }
