@@ -7,7 +7,7 @@ let
 in
 {
     wayland.windowManager.hyprland = {
-        enable = true
+        enable = true;
         systemd.enable = false;
 
         package = unstable.hyprland;
