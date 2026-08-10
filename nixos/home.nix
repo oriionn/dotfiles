@@ -1,5 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 
+let
+  unstable = import (builtins.fetchTarball
+    "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz"
+  ) {};
+in
 {
     imports = [
         ../config/ghostty/config.nix
@@ -16,7 +21,7 @@
         enable = true;
 
         plugins = [
-            pkgs.hyprlandPlugins.hyprsplit
+            unstable.hyprlandPlugins.hyprsplit
         ];
      };
 }
