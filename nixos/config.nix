@@ -3,8 +3,9 @@
 {
     imports =
      [
-         ./hyprland.nix
-         ./kde.nix
+         ./desktop/hyprland.nix
+         ./desktop/kde.nix
+         <home-manager/nixos>
      ];
 
     # Enable unfree packages
@@ -36,6 +37,6 @@
         };
     };
 
-    # Configuration files
-    environment.etc."xdg/ghostty/config.ghostty".source = ../config/ghostty/config;
+    # Users
+    home-manager.users.orion = import ./home.nix;
 }

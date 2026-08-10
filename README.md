@@ -1,6 +1,23 @@
 # My dotfiles
 This repo is dedicated to the configurations I currently use on my desktop.
 
+## Installation
+1. Install NixOS with Minimal installation
+2. Remove packages, allow unfree and system packages declaration
+3. Clone the repository
+```sh
+git clone ssh://git@git.oriondev.fr:2222/orion/dotfiles.git .dotfiles
+```
+4. Add Home Manager channel
+```sh
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager
+sudo nix-channel --update
+```
+5. Rebuild
+```sh
+nixos-rebuild switch
+```
+
 ## Packages used
 ### Wayland Compositor (and his ecosystem)
 - [hyprland](https://archlinux.org/packages/extra/x86_64/hyprland/)
