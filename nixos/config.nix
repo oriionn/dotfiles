@@ -81,6 +81,9 @@ in
     security.pam.services.login.rules.auth.fprintd.settings = {
         timeout = 5;
     };
+    security.pam.services.hyprlock = {
+        fprintAuth = false;
+    };
 
     # Users
     users.users.orion.extraGroups = [ "networkmanager" "wheel" ];
