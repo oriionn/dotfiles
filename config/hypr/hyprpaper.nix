@@ -20,6 +20,10 @@ in
                     monitor = "HDMI-A-1";
                     path = "~/.dotfiles/assets/wallpapers/screen2.png";
                 }
+                {
+                    monitor = "eDP-1";
+                    path = "~/.dotfiles/assets/wallpapers/screen1.jpg";
+                }
             ];
         };
     };
