@@ -12,14 +12,12 @@ in
     imports =
      [
          ./desktop/kde.nix
+         ./desktop/hyprland.nix
          (import "${home-manager}/nixos")
      ];
 
     # Enable unfree packages
     nixpkgs.config.allowUnfree = true;
-
-    # Suggest Electron apps to use Wayland
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     # Packages
     environment.systemPackages = with pkgs; [
