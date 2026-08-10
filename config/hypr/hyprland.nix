@@ -205,7 +205,7 @@ in
         -- WORKSPACES
         --------------------------------
 
-        -- Pavé numérique :
+        -- Numpad:
         --
         -- KP_End    = 1
         -- KP_Down   = 2
@@ -501,4 +501,6 @@ in
         })
         '';
     };
+
+    xdg.configFile."hypr/xdph.conf".source = ./xdph.conf;
 }
