@@ -13,7 +13,6 @@ in
         package = unstable.hyprland;
         portalPackage = unstable.xdg-desktop-portal-hyprland;
         xwayland.enable = true;
-        withUWSM = false;
 
         settings = {
             "$mod" = "SUPER";
@@ -152,52 +151,52 @@ in
             window_rule = [
                 # Ignore maximize requests from apps
                 {
-                match.class = ".*";
-                suppress_event = "maximize";
+                    match.class = ".*";
+                    suppress_event = "maximize";
                 }
 
                 # Fix some dragging issues with XWayland
                 {
-                match = {
-                    class = "^$";
-                    title = "^$";
-                    xwayland = true;
-                    float = true;
-                    fullscreen = false;
-                    pin = false;
-                };
+                    match = {
+                        class = "^$";
+                        title = "^$";
+                        xwayland = true;
+                        float = true;
+                        fullscreen = false;
+                        pin = false;
+                    };
 
-                no_focus = true;
+                    no_focus = true;
                 }
 
                 # Clipse
                 {
-                match.class = "clipse-gui";
+                    match.class = "clipse-gui";
 
-                float = true;
-                size = [ 622 652 ];
-                stay_focused = true;
+                    float = true;
+                    size = [ 622 652 ];
+                    stay_focused = true;
                 }
 
                 # GNOME Clocks
                 {
-                match.class = "org.gnome.clocks";
+                    match.class = "org.gnome.clocks";
 
-                float = true;
-                pin = true;
-                size = [ 600 450 ];
+                    float = true;
+                    pin = true;
+                    size = [ 600 450 ];
                 }
 
                 # Wakfu fullscreen
                 {
-                match.class = "com-ankamagames-wakfu-client-WakfuClient";
-                fullscreen = true;
+                    match.class = "com-ankamagames-wakfu-client-WakfuClient";
+                    fullscreen = true;
                 }
 
                 # Balatro fullscreen
                 {
-                match.class = "steam_app_2379780";
-                fullscreen = true;
+                    match.class = "steam_app_2379780";
+                    fullscreen = true;
                 }
             ];
         };
