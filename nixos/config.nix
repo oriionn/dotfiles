@@ -78,6 +78,9 @@ in
 
     # Fingerprint scanner
     services.fprintd.enable = true;
+    security.pam.services.login.rules.auth.fprintd.settings = {
+        timeout = 5;
+    };
 
     # Users
     users.users.orion.extraGroups = [ "networkmanager" "wheel" ];
