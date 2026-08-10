@@ -4,7 +4,7 @@
     imports =
      [
          ./hyprland.nix
-     ]
+     ];
 
     # Enable unfree packages
     nixpkgs.config.allowUnfree = true;
