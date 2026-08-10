@@ -13,13 +13,4 @@ in
     ];
 
     home.stateVersion = "26.05";
-
-    # Hyprsplit
-    wayland.windowManager.hyprland = {
-        enable = true;
-
-        plugins = [
-            unstable.hyprlandPlugins.hyprsplit
-        ];
-     };
 }
