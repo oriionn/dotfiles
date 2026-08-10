@@ -1,4 +1,4 @@
-{ ... }
+{ ... }:
 
 let
   unstable = import (builtins.fetchTarball
