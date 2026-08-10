@@ -6,6 +6,8 @@ let
   ) {};
 in
 {
+    wayland.systemd.target = "hyprland-session.target";
+
     services.hyprpaper = {
         enable = true;
         package = unstable.hyprpaper;
