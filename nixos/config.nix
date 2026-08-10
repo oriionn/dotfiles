@@ -16,18 +16,30 @@ in
 
     # Packages
     environment.systemPackages = with pkgs; [
+        # Terminal
+        ghostty
         git
         neovim
+        fastfetch
 
+        # Multimedia
         vlc
-        ghostty
+        firefox
 
         # Fonts
         nerd-fonts.jetbrains-mono
     ];
 
     # Ly
-    services.displayManager.ly.enable = true;
+    services.displayManager.ly = {
+        enable = true;
+        x11Support = false;
+
+        settings = {
+            xsessions = null;
+            shell = false;
+        };
+    };
 
     # Git configuration
     programs.git = {
