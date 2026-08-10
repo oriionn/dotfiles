@@ -31,7 +31,7 @@ in
         vlc
         firefox
 
-        # Social Media 
+        # Social Media
         vesktop
 
         # Utilities
@@ -41,7 +41,6 @@ in
         swaynotificationcenter
 
         # Hyprland
-        unstable.hyprpaper
         unstable.hyprpolkitagent
         unstable.hypridle
 
