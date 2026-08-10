@@ -51,22 +51,27 @@ in
 
         hl.config({
             input = {
-            kb_layout = "fr",
-            kb_variant = "",
-            kb_model = "",
-            kb_options = "",
-            kb_rules = "",
+                kb_layout = "fr",
+                kb_variant = "",
+                kb_model = "",
+                kb_options = "",
+                kb_rules = "",
 
-            numlock_by_default = true,
+                numlock_by_default = true,
 
-            accel_profile = "flat",
-            follow_mouse = 1,
-            force_no_accel = 1,
-            sensitivity = 0.0,
+                accel_profile = "flat",
+                follow_mouse = 1,
+                force_no_accel = 1,
+                sensitivity = 0.0,
 
-            touchpad = {
-                natural_scroll = false,
+                touchpad = {
+                    natural_scroll = false,
+                },
             },
+
+            decoration = {
+                rounding = 12,
+                rounding_power = 2.0,
             },
         })
 
