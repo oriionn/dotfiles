@@ -4,6 +4,8 @@
     imports =
      [
          ./hyprland.nix
+         ./kde.nix
+         ../config/ghostty/config.nix
      ];
 
     # Enable unfree packages
@@ -13,12 +15,9 @@
     environment.systemPackages = with pkgs; [
         git
         neovim
-    ];
 
-    # KDE
-    services = {
-        desktopManager.plasma6.enable = true;
-    };
+        vlc
+    ];
 
     # Ly
     services.displayManager.ly.enable = true;
