@@ -17,6 +17,9 @@
 
         vlc
         ghostty
+
+        # Fonts
+        nerd-fonts.jetbrains-mono
     ];
 
     # Ly
@@ -34,5 +37,5 @@
     };
 
     # Configuration files
-    environment.etc."xdg/ghostty/config".source = ../config/ghostty/config;
+    environment.etc."xdg/ghostty/config.ghostty".source = ../config/ghostty/config;
 }
