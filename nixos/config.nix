@@ -71,9 +71,6 @@ in
         };
     };
 
-    # Fingerprint Scanner
-    services.fprintd.enable = true;
-
     # Users
     users.users.orion.extraGroups = [ "networkmanager" "wheel" ];
     users.users.orion.packages = with pkgs; [];
