@@ -17,7 +17,7 @@ in
     xdg.configFile."fastfetch" = {
         source = ../config/fastfetch;
         recursive = true;
-    }
+    };
 
     home.stateVersion = "26.05";
 }
