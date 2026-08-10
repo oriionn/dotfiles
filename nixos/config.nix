@@ -17,6 +17,7 @@
         neovim
 
         vlc
+        ghostty
     ];
 
     # Ly
@@ -32,4 +33,7 @@
             };
         };
     };
+
+    # Configuration files
+    environment.etc."xdg/ghostty/config".source = ../config/ghostty/config;
 }
