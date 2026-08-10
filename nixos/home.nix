@@ -12,6 +12,7 @@ in
         ../config/hypr/hyprpaper.nix
         ../config/hypr/hypridle.nix
         ../config/hypr/hyprlock.nix
+        ../config/hyfetch.nix
     ];
 
     xdg.configFile."fastfetch" = {
