@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 let
   unstable = import (builtins.fetchTarball
