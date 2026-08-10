@@ -23,7 +23,7 @@ in
                 {
                     timeout = 600;
                     on-timeout = "hyprlock";
-                    on-resume = "notify-send 'Hyprlock' 'Session déverouillée' --app-name='Hyprlock' --icon=${config.home.homeDirectory}/.dotfiles/assets/icons/unlock.png"
+                    on-resume = "notify-send 'Hyprlock' 'Session déverouillée' --app-name='Hyprlock' --icon=${config.home.homeDirectory}/.dotfiles/assets/icons/unlock.png";
                 }
             ];
         };
