@@ -5,7 +5,6 @@
      [
          ./hyprland.nix
          ./kde.nix
-         ../config/ghostty/config.nix
      ];
 
     # Enable unfree packages
