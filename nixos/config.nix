@@ -1,11 +1,14 @@
 { config, pkgs, ... }:
 
+let
+  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz;
+in
 {
     imports =
      [
          ./desktop/hyprland.nix
          ./desktop/kde.nix
-         <home-manager/nixos>
+         (import "${home-manager}/nixos")
      ];
 
     # Enable unfree packages
@@ -38,5 +41,8 @@
     };
 
     # Users
+    users.users.orion.extraGroups = [ "networkmanager" "wheel" ];
+    users.users.orion.packages = with pkgs; [];
+
     home-manager.users.orion = import ./home.nix;
 }

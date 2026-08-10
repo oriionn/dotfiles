@@ -6,12 +6,15 @@ This repo is dedicated to the configurations I currently use on my desktop.
 2. Remove packages, allow unfree and system packages declaration
 3. Clone the repository
 ```sh
-git clone ssh://git@git.oriondev.fr:2222/orion/dotfiles.git .dotfiles
+git clone ssh://git@git.oriondev.fr:2222/orion/dotfiles.git ~/.dotfiles
 ```
-4. Add Home Manager channel
-```sh
-sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager
-sudo nix-channel --update
+4. Import in `configuration.nix`
+```nix
+imports = 
+ [
+     (...)
+     /home/USER/.dotfiles/nixos/config.nix
+ ]
 ```
 5. Rebuild
 ```sh
