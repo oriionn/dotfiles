@@ -11,7 +11,6 @@ in
 {
     imports =
      [
-         ./desktop/hyprland.nix
          ./desktop/kde.nix
          (import "${home-manager}/nixos")
      ];
