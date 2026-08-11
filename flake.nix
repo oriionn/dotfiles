@@ -17,11 +17,11 @@
 		unstable = nixpkgs-unstable.legacyPackages.${system};
 	in 
 	{
-		nixosConfiguration.computer = nixpkgs.lib.nixosSystem {
+		nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
 			inherit system;
 			specialArgs = { inherit unstable; };
 			modules = [
-				/etc/nixos/hardware-configuration.nix
+				./nixos/hardware/laptop.nix
 				./nixos/config.nix
 				home-manager.nixosModules.home-manager
 			];
