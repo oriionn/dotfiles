@@ -9,4 +9,4 @@ nix flake update --flake "$DOTFILES"
 
 echo "Installation du flake"
 sudo nixos-rebuild switch \
-	--flake "$DOTFILES#laptop" 
+	--flake "$DOTFILES?submodules=1#laptop" 
