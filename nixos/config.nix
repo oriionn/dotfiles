@@ -16,6 +16,9 @@ in
          (import "${home-manager}/nixos")
      ];
 
+    # Enable NixOS experimental features
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
     # Enable unfree packages
     nixpkgs.config.allowUnfree = true;
 
