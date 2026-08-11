@@ -1,14 +1,11 @@
-{ config, ... }:
+{ unstable, config, ... }:
 
-let
-  unstable = import (builtins.fetchTarball
-    "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz"
-  ) {};
-in
 {
     services.hypridle = {
         enable = true;
-        systemdTarget = "hyprland-session.target";
+        package = unstable.hypridle;
+
+	systemdTarget = "hyprland-session.target";
 
         settings = {
             general = {

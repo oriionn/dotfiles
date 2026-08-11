@@ -1,36 +1,12 @@
-sudo mkdir -p /etc/ly/
-sudo cp -r etc/ly/config.ini /etc/ly/config.ini
+echo "Installation des dotfiles"
 
-mkdir -p ~/.config/hypr/
-cp -r config/hypr/* ~/.config/hypr/
+export NIX_CONIFG="experimental-features = nix-command flakes"
 
-mkdir -p ~/.config/waybar/
-cp -r config/waybar/* ~/.config/waybar/
+DOTFILES="$(cd "$(dirname "$0")" && pwd)"
+:
+echo "Mise à jour du flake"
+nix flake update "$DOTFILES"
 
-mkdir -p ~/.config/zed
-cp -r config/zed/* ~/.config/zed/
-
-mkdir -p ~/.config/swaync
-cp -r config/swaync/* ~/.config/swaync
-
-mkdir -p ~/.config/fastfetch
-cp -r config/fastfetch/* ~/.config/fastfetch
-
-mkdir -p ~/.config/ghostty
-cp -r config/ghostty/* ~/.config/ghostty
-
-mkdir -p ~/.config/arch-update
-cp -r config/arch-update/* ~/.config/arch-update
-
-mkdir -p ~/.config/nwg-bar
-cp -r config/nwg-bar/* ~/.config/nwg-bar
-
-cp config/hyfetch.json ~/.config/hyfetch.json
-
-mkdir -p ~/.local/share/applications/
-cp -r applications/* ~/.local/share/applications/
-
-LINE='source ~/dotfiles/config/zshrc'
-if ! grep -Fxq "$LINE" "$HOME/.zshrc"; then
-  echo "$LINE" >>"$HOME/.zshrc"
-fi
+echo "Installation du flake"
+sudo nixos-rebuild switch \
+	--flake "$DOTFILES#computer" 

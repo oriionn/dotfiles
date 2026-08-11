@@ -1,10 +1,5 @@
-{ ... }:
+{ unstable, ... }:
 
-let
-  unstable = import (builtins.fetchTarball
-    "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz"
-  ) {};
-in
 {
     imports = [
         ../config/ghostty/config.nix

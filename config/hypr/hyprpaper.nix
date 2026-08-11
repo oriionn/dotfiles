@@ -1,10 +1,5 @@
-{ config, ... }:
+{ unstable, config, ... }:
 
-let
-  unstable = import (builtins.fetchTarball
-    "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz"
-  ) {};
-in
 {
     wayland.systemd.target = "hyprland-session.target";
 

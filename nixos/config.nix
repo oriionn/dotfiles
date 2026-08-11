@@ -1,26 +1,61 @@
-{ config, pkgs, ... }:
+{ config, pkgs, unstable, ... }:
 
-let
-  home-manager = builtins.fetchTarball
-    "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz";
-
-  unstable = import (builtins.fetchTarball
-    "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz"
-  ) {};
-in
 {
     imports =
      [
          ./desktop/kde.nix
          ./desktop/hyprland.nix
-         (import "${home-manager}/nixos")
      ];
+    
+    # Bootloader.
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+
+    networking.hostName = "framework"; # Define your hostname.
 
     # Enable NixOS experimental features
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     # Enable unfree packages
     nixpkgs.config.allowUnfree = true;
+
+    # Enable networking
+    networking.networkmanager.enable = true;
+
+    # Set your time zone.
+    time.timeZone = "Europe/Paris";
+
+    # Select internationalisation properties.
+    i18n.defaultLocale = "fr_FR.UTF-8";
+
+    i18n.extraLocaleSettings = {
+        LC_ADDRESS = "fr_FR.UTF-8";
+        LC_IDENTIFICATION = "fr_FR.UTF-8";
+        LC_MEASUREMENT = "fr_FR.UTF-8";
+        LC_MONETARY = "fr_FR.UTF-8";
+        LC_NAME = "fr_FR.UTF-8";
+        LC_NUMERIC = "fr_FR.UTF-8";
+        LC_PAPER = "fr_FR.UTF-8";
+        LC_TELEPHONE = "fr_FR.UTF-8";
+        LC_TIME = "fr_FR.UTF-8";
+    };
+
+    # Configure keymap in X11
+    services.xserver.xkb = {
+        layout = "fr";
+        variant = "azerty";
+    };
+
+    # Configure console keymap
+    console.keyMap = "fr";
+
+    # Define a user account. Don't forget to set a password with ‘passwd’.
+    users.users."orion" = {
+        isNormalUser = true;
+        description = "orion";
+        extraGroups = [ "networkmanager" "wheel" ];
+        packages = with pkgs; [];
+    };
 
     # Packages
     environment.systemPackages = with pkgs; [
@@ -93,4 +128,6 @@ in
     users.users.orion.packages = with pkgs; [];
 
     home-manager.users.orion = import ./home.nix;
+
+    system.stateVersion = "26.05";
 }
