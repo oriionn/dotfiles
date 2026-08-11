@@ -6,7 +6,7 @@
          ./desktop/kde.nix
          ./desktop/hyprland.nix
      ];
-    
+
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -22,10 +22,8 @@
     # Enable networking
     networking.networkmanager.enable = true;
 
-    # Set your time zone.
+    # Region settings
     time.timeZone = "Europe/Paris";
-
-    # Select internationalisation properties.
     i18n.defaultLocale = "fr_FR.UTF-8";
 
     i18n.extraLocaleSettings = {
@@ -40,22 +38,12 @@
         LC_TIME = "fr_FR.UTF-8";
     };
 
-    # Configure keymap in X11
+    # Keyboard
     services.xserver.xkb = {
         layout = "fr";
         variant = "azerty";
     };
-
-    # Configure console keymap
     console.keyMap = "fr";
-
-    # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users."orion" = {
-        isNormalUser = true;
-        description = "orion";
-        extraGroups = [ "networkmanager" "wheel" ];
-        packages = with pkgs; [];
-    };
 
     # Packages
     environment.systemPackages = with pkgs; [
@@ -124,10 +112,16 @@
     };
 
     # Users
-    users.users.orion.extraGroups = [ "networkmanager" "wheel" ];
-    users.users.orion.packages = with pkgs; [];
+    users.users."orion" = {
+        isNormalUser = true;
+        description = "orion";
+        extraGroups = [ "networkmanager" "wheel" ];
+        packages = with pkgs; [];
+    };
+
 
     home-manager.users.orion = import ./home.nix;
 
+    # NixOS version
     system.stateVersion = "26.05";
 }
