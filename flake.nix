@@ -20,7 +20,7 @@
   	let
 		system = "x86_64-linux";
 		unstable = nixpkgs-unstable.legacyPackages.${system};
-		hyprquickshot = hyprquickshot.packages.${system}.default;
+		hyprquickshot = hyprquickshot-source.packages.${system}.default;
 	in
 	{
 		nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
