@@ -90,7 +90,7 @@
         hyprpicker
 
         # Development
-        zeditor
+        zed-editor
         bun
         nodejs
         go
