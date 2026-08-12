@@ -43,7 +43,7 @@
 	{
 		nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
 			inherit system;
-			specialArgs = { inherit unstable hyprquickshot; };
+			specialArgs = { inherit unstable hyprquickshot phoenix; };
 			modules = [
                 ./nixos/hardware/laptop.nix
                 ./nixos/config.nix
@@ -52,7 +52,7 @@
                 vicinae.nixosModules.default
 
                 {
-                    home-manager.extraSpecialArgs = { inherit unstable phoenix; };
+                    home-manager.extraSpecialArgs = { inherit unstable; };
                     home-manager.sharedModules = [ vicinae.homeManagerModules.default ];
                 }
             ];
