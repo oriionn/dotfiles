@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, vicinae-extensions, ... }:
 
 {
     programs.vicinae = {
@@ -27,7 +27,7 @@
                 opacity = 0.98;
             };
 
-            extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
+            extensions = with vicinae-extensions; [
                  bluetooth
                  wifi-commander
                  mullvad

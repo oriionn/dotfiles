@@ -21,15 +21,21 @@
         };
 
         vicinae.url = "github:vicinaehq/vicinae";
+
+        vicinae-extensions-source = {
+            url = "github:vicinaehq/extensions";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 	};
 
-  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae}:
+  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, vicinae-extensions}:
   	let
 		system = "x86_64-linux";
 
 		pkgs = nixpkgs.legacyPackages.${system};
 		unstable = nixpkgs-unstable.legacyPackages.${system};
 		hyprquickshot-unfixed = hyprquickshot-source.packages.${system}.default;
+		vicinae-extensions = vicinae-extensions-source.packages.${system};
 
 		# Fix Hyprquickshot
 		hyprquickshot = pkgs.writeShellScriptBin "hyprquickshot" ''
@@ -40,7 +46,7 @@
 	{
 		nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
 			inherit system;
-			specialArgs = { inherit unstable; inherit hyprquickshot; };
+			specialArgs = { inherit unstable hyprquickshot; };
 			modules = [
                 ./nixos/hardware/laptop.nix
                 ./nixos/config.nix
@@ -49,6 +55,7 @@
                 vicinae.nixosModules.default
 
                 {
+                    home-manager.extraSpecialArgs = { inherit unstable vicinae-extensions; };
                     home-manager.sharedModules = [ vicinae.homeManagerModules.default ];
                 }
             ];

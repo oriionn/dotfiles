@@ -134,8 +134,6 @@
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [];
     };
-
-    home-manager.extraSpecialArgs = { inherit unstable; };
     home-manager.users.orion = import ./home.nix;
 
     # NixOS version
