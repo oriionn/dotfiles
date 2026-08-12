@@ -70,6 +70,7 @@
         vicinae
         swaynotificationcenter
         nwg-bar
+        kdePackages.dolphin
 
         # Hyprland
         unstable.hyprpolkitagent
@@ -78,6 +79,10 @@
 
         # Fonts
         nerd-fonts.jetbrains-mono
+
+         # Theming
+         kdePackages.breeze
+         kdePackages.plasma-integration
     ];
 
     # Ly
