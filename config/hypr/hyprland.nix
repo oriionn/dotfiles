@@ -20,7 +20,7 @@
 
         local mod = "SUPER"
         local terminal = "ghostty"
-        local fileManager = "thunar"
+        local fileManager = "dolphin"
         local menu = "vicinae open"
 
 

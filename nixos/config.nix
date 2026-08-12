@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, ... }:
+{ config, pkgs, unstable, hyprquickshot, ... }:
 
 {
     imports =
@@ -76,6 +76,7 @@
         unstable.hyprpolkitagent
         unstable.hyprlock
         unstable.hypridle
+        hyprquickshot # https://github.com/JamDon2/hyprquickshot
 
         # Fonts
         nerd-fonts.jetbrains-mono
