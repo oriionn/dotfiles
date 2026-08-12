@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, hyprquickshot, ... }:
+{ config, pkgs, unstable, hyprquickshot, phoenix, ... }:
 
 {
     imports =
@@ -84,6 +84,7 @@
         nwg-bar
         kdePackages.dolphin
         brightnessctl
+        phoenix
 
         # Shell
         zoxide

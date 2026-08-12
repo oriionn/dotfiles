@@ -20,15 +20,18 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        phoenix-source.url = "github:oriionn/phoenix";
+
         vicinae.url = "github:vicinaehq/vicinae";
 	};
 
-  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae}:
+  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, phoenix-source}:
   	let
 		system = "x86_64-linux";
 
 		pkgs = nixpkgs.legacyPackages.${system};
 		unstable = nixpkgs-unstable.legacyPackages.${system};
+		phoenix = phoenix-source.packages.${system}.default;
 		hyprquickshot-unfixed = hyprquickshot-source.packages.${system}.default;
 
 		# Fix Hyprquickshot
@@ -49,7 +52,7 @@
                 vicinae.nixosModules.default
 
                 {
-                    home-manager.extraSpecialArgs = { inherit unstable; };
+                    home-manager.extraSpecialArgs = { inherit unstable phoenix; };
                     home-manager.sharedModules = [ vicinae.homeManagerModules.default ];
                 }
             ];
