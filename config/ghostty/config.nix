@@ -5,6 +5,8 @@
         enableZshIntegration = true;
 
         settings = {
+            maximize = true;
+
             background = "191A23";
             font-family = "JetBrainsMono Nerd Font Mono";
             font-size = "13";
