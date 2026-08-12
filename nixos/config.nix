@@ -5,6 +5,7 @@
      [
          ./desktop/kde.nix
          ./desktop/hyprland.nix
+         ./userdirs.nix
      ];
 
     # Bootloader.
