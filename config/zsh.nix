@@ -11,9 +11,7 @@
         enableCompletion = true;
 
         # Autosuggestions
-        autosuggestions = {
-            enable = true;
-        };
+        enableAutosuggestions = true;
 
         # History
         histSize = 10000;
