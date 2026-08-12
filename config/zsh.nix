@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+    home.file.".p10k.zsh" = {
+        source = ./p10k-config;
+        executable = true;
+    };
+
     programs.zsh = {
         enable = true;
 
@@ -76,11 +81,6 @@
                 file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
             }
         ];
-
-        home.file.".p10k.zsh" = {
-            source = ./p10k-config;
-            executable = true;
-        };
 
         # Aliases
         shellAliases = {
