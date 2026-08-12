@@ -21,11 +21,6 @@
         };
 
         vicinae.url = "github:vicinaehq/vicinae";
-
-        vicinae-extensions-source = {
-            url = "github:vicinaehq/extensions";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
 	};
 
   	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, vicinae-extensions-source}:
@@ -55,7 +50,7 @@
                 vicinae.nixosModules.default
 
                 {
-                    home-manager.extraSpecialArgs = { inherit unstable vicinae-extensions; };
+                    home-manager.extraSpecialArgs = { inherit unstable; };
                     home-manager.sharedModules = [ vicinae.homeManagerModules.default ];
                 }
             ];
