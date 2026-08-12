@@ -148,7 +148,7 @@
         hl.bind(
             mod .. " + SHIFT + S",
             hl.dsp.exec_cmd(
-            "quickshell -c hyprquickshot -n"
+                "hyprquickshot"
             )
         )
 
@@ -156,7 +156,7 @@
         hl.bind(
             mod .. " + SHIFT + C",
             hl.dsp.exec_cmd(
-            "hyprpicker -a"
+                "hyprpicker -a"
             )
         )
 
@@ -164,7 +164,7 @@
         hl.bind(
             mod .. " + code:59",
             hl.dsp.exec_cmd(
-            "vicinae vicinae://extensions/vicinae/vicinae/search-emojis"
+                "vicinae vicinae://extensions/vicinae/vicinae/search-emojis"
             )
         )
 
@@ -172,7 +172,7 @@
         hl.bind(
             "XF86Calculator",
             hl.dsp.exec_cmd(
-            "vicinae vicinae://extensions/vicinae/calculator/history"
+                "vicinae vicinae://extensions/vicinae/calculator/history"
             )
         )
 
@@ -180,7 +180,7 @@
         hl.bind(
             mod .. " + L",
             hl.dsp.exec_cmd(
-            "loginctl lock-session"
+                "loginctl lock-session"
             )
         )
 
@@ -192,28 +192,28 @@
         hl.bind(
             mod .. " + left",
             hl.dsp.focus({
-            direction = "left"
+                direction = "left"
             })
         )
 
         hl.bind(
             mod .. " + right",
             hl.dsp.focus({
-            direction = "right"
+                direction = "right"
             })
         )
 
         hl.bind(
             mod .. " + up",
             hl.dsp.focus({
-            direction = "up"
+                direction = "up"
             })
         )
 
         hl.bind(
             mod .. " + down",
             hl.dsp.focus({
-            direction = "down"
+                direction = "down"
             })
         )
 
@@ -236,37 +236,40 @@
         -- KP_Insert = 0 / workspace 10
 
         local workspaceKeys = {
-            "KP_End",
-            "KP_Down",
-            "KP_Next",
-            "KP_Left",
-            "KP_Begin",
-            "KP_Right",
-            "KP_Home",
-            "KP_Up",
-            "KP_Prior",
-            "KP_Insert",
+            { "KP_End",    "ampersand" },
+            { "KP_Down",   "eacute" },
+            { "KP_Next",   "quotedbl" },
+            { "KP_Left",   "apostrophe" },
+            { "KP_Begin",  "parenleft" },
+            { "KP_Right",  "minus" },
+            { "KP_Home",   "egrave" },
+            { "KP_Up",     "underscore" },
+            { "KP_Prior",  "ccedilla" },
+            { "KP_Insert", "agrave" },
         }
 
-        for i, key in ipairs(workspaceKeys) do
+        for i, keys in ipairs(workspaceKeys) do
+            for _, key in ipairs(keys) do
 
-            -- SUPER + Numpad
-            -- Change de workspace
-            hl.bind(
-            mod .. " + " .. key,
-            hl.dsp.focus({
-                workspace = i
-            })
-            )
+                -- SUPER + key
+                -- Change de workspace
+                hl.bind(
+                    mod .. " + " .. key,
+                    hl.dsp.focus({
+                        workspace = i
+                    })
+                )
 
-            -- SUPER + SHIFT + Numpad
-            -- Déplace la fenêtre vers le workspace
-            hl.bind(
-            mod .. " + SHIFT + " .. key,
-            hl.dsp.window.move({
-                workspace = i
-            })
-            )
+                -- SUPER + SHIFT + key
+                -- Déplace la fenêtre vers le workspace
+                hl.bind(
+                    mod .. " + SHIFT + " .. key,
+                    hl.dsp.window.move({
+                        workspace = i
+                    })
+                )
+
+            end
         end
 
 

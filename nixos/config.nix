@@ -78,6 +78,7 @@
         unstable.hyprlock
         unstable.hypridle
         hyprquickshot # https://github.com/JamDon2/hyprquickshot
+        hyprpicker
 
         # Fonts
         nerd-fonts.jetbrains-mono
