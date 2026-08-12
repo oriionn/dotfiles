@@ -31,12 +31,28 @@
             saveNoDups = true;
             ignoreDups = true;
             findNoDups = true;
-         };
+        };
 
-        initContent = ''
-            bindkey '^[[A' history-search-backward
-            bindkey '^[[B' history-search-forward
-        '';
+        initContent = lib.mkMerge [
+            (lib.mkOrder 500 ''
+                if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+                    source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+                fi
+            '')
+
+            (lib.mkOrder 1000 ''
+                [[ -r "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
+            '')
+
+            (lib.mkOrder 1500 ''
+                bindkey '^[[A' history-search-backward
+                bindkey '^[[B' history-search-forward
+            '')
+
+            (lib.mkOrder 2000 ''
+                hyfetch
+            '')
+        ];
 
         # Plugins
         oh-my-zsh = {
