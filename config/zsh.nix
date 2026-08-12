@@ -34,7 +34,7 @@
         '';
 
         # Plugins
-        ohMyZsh = {
+        oh-my-zsh = {
             enable = true;
             plugins = [
                 # Background notify
