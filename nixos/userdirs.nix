@@ -16,7 +16,10 @@ in
         publicShare = "${home}/Public";
         templates = "${home}/Modèles";
         videos = "${home}/Vidéos";
-        screenshots = "${home}/Images/Copies d'écran";
+
+        extraConfig = {
+            screenshots = "${home}/Images/Copies d'écran";
+        };
     };
     home-manager.users.orion.xdg.configFile."user-dirs.locale".text = "fr_FR.UTF-8";
 
