@@ -30,7 +30,6 @@
 		pkgs = nixpkgs.legacyPackages.${system};
 		unstable = nixpkgs-unstable.legacyPackages.${system};
 		hyprquickshot-unfixed = hyprquickshot-source.packages.${system}.default;
-		vicinae-extensions = vicinae-extensions-source.packages.${system};
 
 		# Fix Hyprquickshot
 		hyprquickshot = pkgs.writeShellScriptBin "hyprquickshot" ''
