@@ -20,7 +20,13 @@
   	let
 		system = "x86_64-linux";
 		unstable = nixpkgs-unstable.legacyPackages.${system};
-		hyprquickshot = hyprquickshot-source.packages.${system}.default;
+		hyprquickshot-unfixed = hyprquickshot-source.packages.${system}.default;
+
+		# Fix Hyprquickshot
+		hyprquickshot = pkgs.writeShellScriptBin "hyprquickshot" ''
+            export QT_QPA_PLATFORMTHEME=
+            exec ${hyprquickshot-unfixed}/bin/hyprquickshot "$@"
+        '';
 	in
 	{
 		nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
