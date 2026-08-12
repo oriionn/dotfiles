@@ -16,9 +16,11 @@
         };
 	};
 
-  	outputs = {self, pkgs, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source}:
+  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source}:
   	let
 		system = "x86_64-linux";
+
+		pkgs = nixpkgs.legacyPackages.${system};
 		unstable = nixpkgs-unstable.legacyPackages.${system};
 		hyprquickshot-unfixed = hyprquickshot-source.packages.${system}.default;
 
