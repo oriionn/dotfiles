@@ -32,7 +32,6 @@
             hl.exec_cmd("waybar")
             hl.exec_cmd("udiskie")
             hl.exec_cmd("systemctl --user start hyprpolkitagent")
-            hl.exec_cmd("vicinae server")
             hl.exec_cmd("swaync")
             hl.exec_cmd("hyperidle")
             hl.exec_cmd("kdeconnect-indicator")
