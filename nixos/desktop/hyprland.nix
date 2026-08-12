@@ -15,13 +15,4 @@
         NIXOS_OZONE_WL = "1"; # hint electron apps to use wayland
         QT_QPA_PLATFORMTHEME = "kde";
     };
-
-
-    xdg.configFile."kdeglobals".text = ''
-      [KDE]
-      widgetStyle=Breeze
-
-      [General]
-      ColorScheme=BreezeDark
-    '';
 }

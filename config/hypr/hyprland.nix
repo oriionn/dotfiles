@@ -513,4 +513,13 @@
     };
 
     xdg.configFile."hypr/xdph.conf".source = ./xdph.conf;
+
+
+    xdg.configFile."kdeglobals".text = ''
+        [KDE]
+        widgetStyle=Breeze
+
+        [General]
+        ColorScheme=BreezeDark
+    '';
 }
