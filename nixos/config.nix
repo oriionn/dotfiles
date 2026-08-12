@@ -82,14 +82,22 @@
         swaynotificationcenter
         nwg-bar
         kdePackages.dolphin
+        brightnessctl
 
         # Hyprland
         unstable.hyprpolkitagent
         hyprquickshot # https://github.com/JamDon2/hyprquickshot
         hyprpicker
 
+        # Development
+        zeditor
+        bun
+        nodejs
+        go
+
         # Fonts
         nerd-fonts.jetbrains-mono
+        nerd-fonts.symbols-only
 
          # Theming
          kdePackages.breeze
