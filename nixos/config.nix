@@ -108,6 +108,7 @@
          kdePackages.breeze
          kdePackages.plasma-integration
     ];
+    programs.zsh.enable = true;
     programs.command-not-found.enable = true;
 
     # Ly
