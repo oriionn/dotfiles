@@ -11,20 +11,22 @@
         enableCompletion = true;
 
         # Autosuggestions
-        enableAutosuggestions = true;
+        autosuggestion.enable = true;
 
         # History
-        histSize = 10000;
-        histFile = "$HOME/.zsh_history";
-        setOptions = [
-            "APPEND_HISTORY"
-            "SHARE_HISTORY"
-            "HIST_IGNORE_SPACE"
-            "HIST_IGNORE_ALL_DUPS"
-            "HIST_SAVE_NO_DUPS"
-            "HIST_IGNORE_DUPS"
-            "HIST_FIND_NO_DUPS"
-        ];
+        history = {
+            size = 10000;
+            save = 10000;
+            path = "$HOME/.zsh_history";
+
+            append = true;
+            share = true;
+            ignoreSpace = true;
+            ignoreAllDups = true;
+            saveNoDups = true;
+            ignoreDups = true;
+            findNoDups = true;
+         };
 
         interactiveShellInit = ''
             bindkey '^[[A' history-search-backward
