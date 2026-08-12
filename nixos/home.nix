@@ -3,6 +3,7 @@
 {
     imports = [
         ../config/ghostty/config.nix
+        ../config/nwg-bar/bar.nix
         ../config/hypr/hyprland.nix
         ../config/hypr/hyprpaper.nix
         ../config/hypr/hypridle.nix
@@ -20,8 +21,8 @@
         recursive = true;
     };
 
-    xdg.configFile."nwg-bar" = {
-        source = ../config/nwg-bar;
+    xdg.configFile."swaync" = {
+        source = ../config/swaync;
         recursive = true;
     };
 
