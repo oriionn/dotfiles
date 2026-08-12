@@ -1,6 +1,11 @@
 {
 	description = "A very basic flake";
 
+	nixConfig = {
+	    extra-substituters = [ "https://vicinae.cachix.org" ];
+		extra-trusted-public-keys = [ "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc=" ];
+	}
+
 	inputs = {
   		nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
   		nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -14,9 +19,11 @@
             url = "github:jamdon2/hyprquickshot";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        vicinae.url = "github:vicinaehq/vicinae";
 	};
 
-  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source}:
+  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae}:
   	let
 		system = "x86_64-linux";
 
@@ -35,10 +42,16 @@
 			inherit system;
 			specialArgs = { inherit unstable; inherit hyprquickshot; };
 			modules = [
-				./nixos/hardware/laptop.nix
-				./nixos/config.nix
-				home-manager.nixosModules.home-manager
-			];
+                ./nixos/hardware/laptop.nix
+                ./nixos/config.nix
+
+                home-manager.nixosModules.home-manager
+                vicinae.nixosModules.default
+
+                {
+                    home-manager.sharedModules = [ vicinae.homeManagerModules.default ];
+                }
+            ];
 		};
 	};
 }

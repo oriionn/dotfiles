@@ -23,6 +23,17 @@
     # Enable networking
     networking.networkmanager.enable = true;
 
+    # Bluetooth
+    hardware.bluetooth = {
+        enable = true;
+        powerOnBoot = true;
+        settings = {
+            General = {
+                Experimental = true;
+            };
+        };
+    };
+
     # Region settings
     time.timeZone = "Europe/Paris";
     i18n.defaultLocale = "fr_FR.UTF-8";
@@ -68,15 +79,12 @@
         # Utilities
         waybar
         udiskie
-        vicinae
         swaynotificationcenter
         nwg-bar
         kdePackages.dolphin
 
         # Hyprland
         unstable.hyprpolkitagent
-        unstable.hyprlock
-        unstable.hypridle
         hyprquickshot # https://github.com/JamDon2/hyprquickshot
         hyprpicker
 
@@ -126,7 +134,6 @@
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [];
     };
-
 
     home-manager.extraSpecialArgs = { inherit unstable; };
     home-manager.users.orion = import ./home.nix;
