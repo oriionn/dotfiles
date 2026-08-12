@@ -28,7 +28,7 @@
         };
 	};
 
-  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, vicinae-extensions}:
+  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, vicinae-extensions-source}:
   	let
 		system = "x86_64-linux";
 
