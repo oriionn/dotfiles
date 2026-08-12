@@ -1,0 +1,104 @@
+{ config, pkgs, ... }:
+
+{
+    programs.zsh = {
+        enable = true;
+
+        # Syntax highlighting
+        syntaxHighlighting.enable = true;
+
+        # Autocompletions
+        enableCompletion = true;
+
+        # Autosuggestions
+        autosuggestions = {
+            enable = true;
+        };
+
+        # History
+        histSize = 10000;
+        histFile = "$HOME/.zsh_history";
+        setOptions = [
+            "APPEND_HISTORY"
+            "SHARE_HISTORY"
+            "HIST_IGNORE_SPACE"
+            "HIST_IGNORE_ALL_DUPS"
+            "HIST_SAVE_NO_DUPS"
+            "HIST_IGNORE_DUPS"
+            "HIST_FIND_NO_DUPS"
+        ];
+
+        interactiveShellInit = ''
+            bindkey '^[[A' history-search-backward
+            bindkey '^[[B' history-search-forward
+        '';
+
+        # Plugins
+        ohMyZsh = {
+            enable = true;
+            plugins = [
+                # Background notify
+                "bgnotify"
+
+                # Command not found
+                "command-not-found"
+
+                # Auto load dotenv
+                "dotenv"
+
+                # Colored contents
+                "colored-man-pages"
+                "colorize"
+
+                # Base64
+                "encode64"
+            ];
+
+            extraConfig = ''
+                zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+                zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+                zstyle ':completion:*' menu no
+                zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+                bgnotify_threshold=8
+            '';
+        };
+
+        plugins = [
+            {
+                name = "fzf-tab";
+                src = pkgs.zsh-fzf-tab;
+                file = "share/fzf-tab/fzf-tab.zsh";
+            }
+            {
+                name = "powerlevel10k";
+                src = pkgs.zsh-powerlevel10k;
+                file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+            }
+            {
+                name = "powerlevel10k-config";
+                src = ./p10k-config;
+                file = "p10k.zsh";
+            }
+        ];
+
+        # Aliases
+        shellAliases = {
+            fastfetch = "fastfetch --kitty ${../assets/arch_bi.png}";
+            fetch = "fastfetch";
+            ls = "eza --icons --group-directories-first --hyperlink";
+            grep = "grep --color=auto";
+            cd = "z";
+            zed = "zeditor";
+
+            switch = "sudo nixos-rebuild switch --flake \"${config.home.homeDirectory}/.dotfiles?submodules=1#laptop\"";
+        };
+    };
+
+    programs.zoxide = {
+        enable = true;
+        enableZshIntegration = true;
+    };
+
+    programs.fzf.enableZshIntegration = true;
+}

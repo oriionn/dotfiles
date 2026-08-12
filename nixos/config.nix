@@ -5,7 +5,7 @@
      [
          ./desktop/kde.nix
          ./desktop/hyprland.nix
-         ./userdirs.nix
+         ../config/userdirs.nix
      ];
 
     # Bootloader.
@@ -84,6 +84,11 @@
         kdePackages.dolphin
         brightnessctl
 
+        # Shell
+        zoxide
+        eza
+        fzf
+
         # Hyprland
         unstable.hyprpolkitagent
         hyprquickshot # https://github.com/JamDon2/hyprquickshot
@@ -103,6 +108,7 @@
          kdePackages.breeze
          kdePackages.plasma-integration
     ];
+    programs.command-not-found.enable = true;
 
     # Ly
     services.displayManager.ly = {
@@ -141,6 +147,7 @@
         description = "orion";
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [];
+        shell = pkgs.zsh;
     };
     home-manager.users.orion = import ./home.nix;
 

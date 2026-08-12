@@ -10,6 +10,7 @@
         ../config/hypr/hyprlock.nix
         ../config/hyfetch.nix
         ../config/vicinae.nix
+        ../config/zsh.nix
     ];
 
     xdg.configFile."fastfetch" = {
