@@ -68,6 +68,7 @@
         # Multimedia
         vlc
         firefox
+        ungoogled-chromium
 
         # Audio
         playerctl
