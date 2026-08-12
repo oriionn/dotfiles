@@ -134,7 +134,7 @@
         hl.bind(
             mod .. " + V",
             hl.dsp.exec_cmd(
-            "vicinae vicinae://extensions/vicinae/clipboard/history"
+            "vicinae vicinae://launch/clipboard/history"
             )
         )
 
@@ -164,7 +164,7 @@
         hl.bind(
             mod .. " + code:59",
             hl.dsp.exec_cmd(
-                "vicinae vicinae://extensions/vicinae/vicinae/search-emojis"
+                "vicinae vicinae://launch/core/search-emojis"
             )
         )
 
@@ -172,7 +172,7 @@
         hl.bind(
             "XF86Calculator",
             hl.dsp.exec_cmd(
-                "vicinae vicinae://extensions/vicinae/calculator/history"
+                "vicinae vicinae://launch/calculator/history"
             )
         )
 
