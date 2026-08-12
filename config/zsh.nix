@@ -81,6 +81,7 @@
                 file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
             }
         ];
+        localVariables.POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = true;
 
         # Aliases
         shellAliases = {
