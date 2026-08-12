@@ -101,7 +101,7 @@
 
         # Aliases
         shellAliases = {
-            fastfetch = "fastfetch --kitty ${../assets/arch_bi.png}";
+            fastfetch = "hyfetch --args=\"\" --distro=nixos --preset=bisexual";
             fetch = "fastfetch";
             ls = "eza --icons --group-directories-first --hyperlink";
             grep = "grep --color=auto";
