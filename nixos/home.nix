@@ -43,6 +43,7 @@
         # Define session variables
         setSessionVariables = true;
     };
+    xdg.configFile."user-dirs.locale".text = "fr_FR.UTF-8";
 
     # Home Manager version
     home.stateVersion = "26.05";
