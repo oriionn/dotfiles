@@ -4,28 +4,30 @@ let
   home = config.users.users.${username}.home;
 in
 {
-    home-manager.users.${username}.xdg.userDirs = {
-        enable = true;
-        createDirectories = true;
+    home-manager.users.${username} = {
+        xdg.userDirs = {
+            enable = true;
+            createDirectories = true;
 
-        desktop = "${home}/Bureau";
-        documents = "${home}/Documents";
-        download = "${home}/Téléchargements";
-        music = "${home}/Musique";
-        pictures = "${home}/Images";
-        publicShare = "${home}/Public";
-        templates = "${home}/Modèles";
-        videos = "${home}/Vidéos";
+            desktop = "${home}/Bureau";
+            documents = "${home}/Documents";
+            download = "${home}/Téléchargements";
+            music = "${home}/Musique";
+            pictures = "${home}/Images";
+            publicShare = "${home}/Public";
+            templates = "${home}/Modèles";
+            videos = "${home}/Vidéos";
 
-        extraConfig = {
-            SCREENSHOTS = "${home}/Images/Copies d'écran";
+            extraConfig = {
+                SCREENSHOTS = "${home}/Images/Copies d'écran";
+            };
         };
+        xdg.configFile."user-dirs.locale" = {
+            text = "fr_FR.UTF-8";
+            force = true;
+        };
+        xdg.configFile."user-dirs.dirs".force = true;
     };
-    home-manager.users.${username}.xdg.configFile."user-dirs.locale" = {
-        text = "fr_FR.UTF-8";
-        force = true;
-    };
-    home-manager.users.${username}.xdg.configFile."user-dirs.dirs".force = true;
 
     environment.sessionVariables = {
         XDG_DESKTOP_DIR = "\${HOME}/Bureau";
