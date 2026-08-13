@@ -39,6 +39,21 @@
         ];
     };
 
+    systemd.services.create-partage-hidden = {
+        wantedBy = [ "multi-user.target" ];
+        after = [ "mnt-Partage.mount" ];
+        requires = [ "mnt-Partage.mount" ];
+
+        serviceConfig.Type = "oneshot";
+
+        script = ''
+            cat > /mnt/Partage/.hidden <<'EOF'
+System Volume Information
+$RECYCLE.BIN
+        EOF
+        '';
+    };
+
     swapDevices = [ ];
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
