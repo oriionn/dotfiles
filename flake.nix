@@ -26,7 +26,7 @@
         vicinae.url = "github:vicinaehq/vicinae";
 	};
 
-  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, phoenix-source}:
+  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, phoenix-source, downtime-source}:
   	let
 		system = "x86_64-linux";
 
