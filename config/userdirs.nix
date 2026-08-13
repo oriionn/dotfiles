@@ -20,6 +20,8 @@ in
         extraConfig = {
             screenshots = "${home}/Images/Copies d'écran";
         };
+
+        force = true;
     };
     home-manager.users.orion.xdg.configFile."user-dirs.locale".text = "fr_FR.UTF-8";
 

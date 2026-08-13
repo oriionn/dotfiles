@@ -35,6 +35,8 @@
             "x-scheme-handler/http" = "firefox.desktop";
             "x-scheme-handler/https" = "firefox.desktop";
         };
+
+        force = true;
     };
 
     # Home Manager version
