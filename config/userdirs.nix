@@ -1,10 +1,10 @@
-{ config, ... }:
+{ config, username, ... }:
 
 let
-  home = config.users.users.orion.home;
+  home = config.users.users.${username}.home;
 in
 {
-    home-manager.users.orion.xdg.userDirs = {
+    home-manager.users.${username}.xdg.userDirs = {
         enable = true;
         createDirectories = true;
 
@@ -21,11 +21,11 @@ in
             SCREENSHOTS = "${home}/Images/Copies d'écran";
         };
     };
-    home-manager.users.orion.xdg.configFile."user-dirs.locale" = {
+    home-manager.users.${username}.xdg.configFile."user-dirs.locale" = {
         text = "fr_FR.UTF-8";
         force = true;
     };
-    home-manager.users.orion.xdg.configFile."user-dirs.dirs".force = true;
+    home-manager.users.${username}.xdg.configFile."user-dirs.dirs".force = true;
 
     environment.sessionVariables = {
         XDG_DESKTOP_DIR = "\${HOME}/Bureau";
