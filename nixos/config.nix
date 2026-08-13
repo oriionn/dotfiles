@@ -1,7 +1,7 @@
-{ config, lib, pkgs, unstable, hyprquickshot, phoenix, downtime, ... }:
+{ config, lib, pkgs, unstable, hyprquickshot, phoenix, downtime, username, ... }:
 
 let
-    username = "orion";
+    home = config.users.users.${username}.home;
 in
 {
     imports =
@@ -150,7 +150,7 @@ in
         packages = [
             {
                 appId = "com.hytale.Launcher";
-                bundle = "file:///home/${username}/.dotfiles/flatpaks/hytale/app.flatpak";
+                bundle = "file://${home}/.dotfiles/flatpaks/hytale/app.flatpak";
                 sha256 = lib.fileContents ../flatpaks/hytale/sha256.txt;
             }
         ];

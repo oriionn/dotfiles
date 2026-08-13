@@ -51,7 +51,7 @@
 	{
 		nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
 			inherit system;
-			specialArgs = { inherit unstable hyprquickshot phoenix downtime; };
+			specialArgs = { inherit unstable hyprquickshot phoenix downtime; username = "orion"; };
 			modules = [
                 ./nixos/hardware/laptop.nix
                 ./nixos/config.nix

@@ -1,4 +1,4 @@
-{ config, unstable, ... }:
+{ config, unstable ... }:
 
 {
     imports = [
@@ -35,9 +35,8 @@
             "x-scheme-handler/http" = "firefox.desktop";
             "x-scheme-handler/https" = "firefox.desktop";
         };
-
-        force = true;
     };
+    xdg.configFile."mimeapps.list".force = true;
 
     # Home Manager version
     home.stateVersion = "26.05";
