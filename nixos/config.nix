@@ -161,7 +161,14 @@ in
     };
 
     # Portals
-    xdg.portal.enable = true;
+    xdg.portal = {
+        enable = true;
+        extraPortals = [
+          pkgs.xdg-desktop-portal-gtk
+          unstable.xdg-desktop-portal-hyprland
+        ];
+        config.common.default = "gtk";
+    };
 
     # Games
     programs.steam = {
