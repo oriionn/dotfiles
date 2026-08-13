@@ -115,6 +115,7 @@ in
         kdePackages.dolphin
         brightnessctl
         xdg-utils
+        glib
 
         # System info
         waybar
