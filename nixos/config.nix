@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, hyprquickshot, phoenix, downtime, ... }:
+{ config, lib, pkgs, unstable, hyprquickshot, phoenix, downtime, ... }:
 
 let
     username = "orion";
