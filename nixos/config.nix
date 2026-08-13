@@ -114,6 +114,7 @@ in
         nwg-bar
         kdePackages.dolphin
         brightnessctl
+        xdg-utils
 
         # System info
         waybar
@@ -163,9 +164,15 @@ in
     # XDG Portals
     xdg.portal = {
         enable = true;
+
+        extraPortals = with pkgs; [
+            xdg-desktop-portal-gtk
+        ];
+
         config = {
             hyprland.default = [ "hyprland" "gtk" ];
-            kde.default = [ "gtk" ];
+            kde.default = [ "kde" "gtk" ];
+            common.default = [ "gtk" ];
         };
     };
 
