@@ -1,5 +1,8 @@
 { config, pkgs, unstable, hyprquickshot, phoenix, downtime, ... }:
 
+let
+    username = "orion";
+in
 {
     imports =
      [
@@ -99,6 +102,7 @@
         # Tools
         penpot-desktop
         obsidian
+        freecad
 
         # Utilities
         udiskie
@@ -141,6 +145,18 @@
     ];
     programs.zsh.enable = true;
 
+    services.flatpak = {
+        enable = true;
+        packages = [
+            {
+                appId = "com.hytale.Launcher";
+                bundle = "file:///home/${username}/.dotfiles/flatpaks/hytale/app.flatpak";
+                sha256 = lib.fileContents ../flatpaks/hytale/sha256.txt;
+            }
+        ];
+    };
+
+
     # Games
     programs.steam = {
         enable = true;
@@ -178,14 +194,14 @@
     };
 
     # Users
-    users.users."orion" = {
+    users.users."${username}" = {
         isNormalUser = true;
-        description = "orion";
+        description = "${username}";
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [];
         shell = pkgs.zsh;
     };
-    home-manager.users.orion = import ./home.nix;
+    home-manager.users."${username}"" = import ./home.nix;
 
     # NixOS version
     system.stateVersion = "26.05";

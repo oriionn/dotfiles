@@ -29,9 +29,10 @@
         downtime-source.url = "github:oriionn/downtime";
 
         vicinae.url = "github:vicinaehq/vicinae";
+        nix-flatpak.url = "github:gmodena/nix-flatpak";
 	};
 
-  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, phoenix-source, downtime-source, nix-index-database}:
+  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, phoenix-source, downtime-source, nix-index-database, nix-flatpak}:
   	let
 		system = "x86_64-linux";
 
@@ -57,6 +58,7 @@
 
                 home-manager.nixosModules.home-manager
                 vicinae.nixosModules.default
+                nix-flatpak.nixosModules.nix-flatpak
 
                 {
                     home-manager.extraSpecialArgs = { inherit unstable; };
