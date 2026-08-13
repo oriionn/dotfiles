@@ -1,4 +1,4 @@
-{ config, unstable, ... }:
+{ config, unstable, pkgs, ... }:
 
 {
     imports = [
@@ -27,6 +27,31 @@
         source = ../config/swaync;
         recursive = true;
     };
+
+    # XDG Portals
+    xdg.portal = {
+        enable = true;
+
+        extraPortals = [
+            pkgs.xdg-desktop-portal-gtk
+            pkgs.kdePackages.xdg-desktop-portal-kde
+        ];
+
+        config = {
+            common.default = [ "gtk" ];
+
+            kde = {
+                default = [ "kde" "gtk" ];
+                "org.freedesktop.impl.portal.OpenURI" = "gtk";
+            };
+
+            hyprland = {
+                default = [ "hyprland" "gtk" ];
+                "org.freedesktop.impl.portal.OpenURI" = "gtk";
+            };
+        };
+    };
+
 
     # Default apps
     xdg.mimeApps = {

@@ -162,21 +162,6 @@ in
         ];
     };
 
-    # XDG Portals
-    xdg.portal = {
-        enable = true;
-
-        extraPortals = with pkgs; [
-            xdg-desktop-portal-gtk
-        ];
-
-        config = {
-            hyprland.default = [ "hyprland" "gtk" ];
-            kde.default = [ "kde" "gtk" ];
-            common.default = [ "gtk" ];
-        };
-    };
-
     # Games
     programs.steam = {
         enable = true;
