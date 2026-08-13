@@ -163,10 +163,6 @@ in
     # XDG Portals
     xdg.portal = {
         enable = true;
-        extraPortals = [
-            unstable.xdg-desktop-portal-hyprland
-            pkgs.xdg-desktop-portal-gtk
-        ];
         config = {
             hyprland.default = [ "hyprland" "gtk" ];
             kde.default = [ "gtk" ];
