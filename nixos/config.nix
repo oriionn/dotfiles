@@ -102,7 +102,16 @@ in
         vesktop
 
         # Games
-        prismlauncher
+        (prismlauncher.override {
+            additionalPrograms = [ ffmpeg ];
+
+            jdks = [
+                zulu8
+                zulu17
+                zulu21
+                zulu
+            ];
+        })
         steam
 
         # Tools
