@@ -210,11 +210,20 @@ in
         fprintAuth = false;
     };
 
+    # Docker
+    virtualisation.docker = {
+        enable = false;
+        rootless = {
+            enable = true;
+            setSocketVariable = true;
+        };
+    };
+
     # Users
     users.users."${username}" = {
         isNormalUser = true;
         description = "${username}";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
         packages = with pkgs; [];
         shell = pkgs.zsh;
     };
