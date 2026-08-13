@@ -160,14 +160,17 @@ in
         ];
     };
 
-    # Portals
+    # XDG Portals
     xdg.portal = {
         enable = true;
         extraPortals = [
-          pkgs.xdg-desktop-portal-gtk
-          unstable.xdg-desktop-portal-hyprland
+            unstable.xdg-desktop-portal-hyprland
+            pkgs.xdg-desktop-portal-gtk
         ];
-        config.common.default = "gtk";
+        config = {
+            hyprland.default = [ "hyprland" "gtk" ];
+            kde.default = [ "gtk" ]
+        };
     };
 
     # Games
