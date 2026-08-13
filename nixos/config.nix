@@ -167,10 +167,11 @@ in
         enable = true;
         packages = [
             {
-                appId = "com.hytale.Launcher";
+                appId = "com.hypixel.HytaleLauncher";
                 bundle = "file://${home}/.dotfiles/flatpaks/hytale/app.flatpak";
                 sha256 = lib.fileContents ../flatpaks/hytale/sha256.txt;
             }
+            "io.missioncenter.MissionCenter"
         ];
     };
 
