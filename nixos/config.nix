@@ -57,6 +57,14 @@
     };
     console.keyMap = "fr";
 
+    # Printer
+    services.printing.enable = true;
+    services.avahi = {
+        enable = true;
+        nssmdns4 = true;
+        openFirewall = true;
+    };
+
     # Packages
     environment.systemPackages = with pkgs; [
         # Terminal
@@ -102,6 +110,7 @@
         bun
         nodejs
         go
+        gnumake
 
         # Fonts
         nerd-fonts.jetbrains-mono
@@ -112,7 +121,6 @@
          kdePackages.plasma-integration
     ];
     programs.zsh.enable = true;
-    programs.command-not-found.enable = true;
 
     # Ly
     services.displayManager.ly = {

@@ -61,9 +61,6 @@
                 # Background notify
                 "bgnotify"
 
-                # Command not found
-                "command-not-found"
-
                 # Auto load dotenv
                 "dotenv"
 
@@ -118,4 +115,5 @@
     };
 
     programs.fzf.enableZshIntegration = true;
+    programs.nix-index.enable = true
 }

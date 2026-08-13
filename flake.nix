@@ -20,13 +20,18 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        nix-index-database = {
+            url = "github:nix-community/nix-index-database";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         phoenix-source.url = "github:oriionn/phoenix";
         downtime-source.url = "github:oriionn/downtime";
 
         vicinae.url = "github:vicinaehq/vicinae";
 	};
 
-  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, phoenix-source, downtime-source}:
+  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, phoenix-source, downtime-source, nix-index-database}:
   	let
 		system = "x86_64-linux";
 
@@ -55,7 +60,10 @@
 
                 {
                     home-manager.extraSpecialArgs = { inherit unstable; };
-                    home-manager.sharedModules = [ vicinae.homeManagerModules.default ];
+                    home-manager.sharedModules = [
+                        vicinae.homeManagerModules.default
+                        nix-index-database.homeModules.default
+                    ];
                 }
             ];
 		};
