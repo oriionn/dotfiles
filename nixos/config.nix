@@ -78,6 +78,10 @@
 
         # Multimedia
         vlc
+        delfin
+        feishin
+
+        # Browser
         firefox
         ungoogled-chromium
 
@@ -87,6 +91,14 @@
 
         # Social Media
         vesktop
+
+        # Games
+        prismlauncher
+        steam
+
+        # Tools
+        penpot-desktop
+        obsidian
 
         # Utilities
         udiskie
@@ -128,6 +140,11 @@
          kdePackages.plasma-integration
     ];
     programs.zsh.enable = true;
+
+    # Games
+    programs.steam = {
+        enable = true;
+    };
 
     # Ly
     services.displayManager.ly = {
