@@ -21,6 +21,7 @@
         };
 
         phoenix-source.url = "github:oriionn/phoenix";
+        downtime-source.url = "github:oriionn/downtime";
 
         vicinae.url = "github:vicinaehq/vicinae";
 	};
@@ -32,6 +33,7 @@
 		pkgs = nixpkgs.legacyPackages.${system};
 		unstable = nixpkgs-unstable.legacyPackages.${system};
 		phoenix = phoenix-source.packages.${system}.default;
+		downtime = downtime-source.packages.${system}.default;
 		hyprquickshot-unfixed = hyprquickshot-source.packages.${system}.default;
 
 		# Fix Hyprquickshot
@@ -43,7 +45,7 @@
 	{
 		nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
 			inherit system;
-			specialArgs = { inherit unstable hyprquickshot phoenix; };
+			specialArgs = { inherit unstable hyprquickshot phoenix downtime; };
 			modules = [
                 ./nixos/hardware/laptop.nix
                 ./nixos/config.nix

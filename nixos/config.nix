@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, hyprquickshot, phoenix, ... }:
+{ config, pkgs, unstable, hyprquickshot, phoenix, downtime, ... }:
 
 {
     imports =
@@ -84,7 +84,8 @@
         nwg-bar
         kdePackages.dolphin
         brightnessctl
-        phoenix
+        phoenix # https://git.oriondev.fr/orion/phoenix
+        downtime # https://git.oriondev.fr/orion/downtime
 
         # Shell
         zoxide

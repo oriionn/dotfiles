@@ -44,7 +44,7 @@
         {
             "type": "command",
             "key": "  ├ ",
-            "text": "/home/emilien/.local/bin/downtime",
+            "text": "downtime",
         },
         {
             "type": "custom",
