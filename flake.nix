@@ -27,12 +27,16 @@
 
         phoenix-source.url = "github:oriionn/phoenix";
         downtime-source.url = "github:oriionn/downtime";
+        waybar-source.url = "github:Alexays/Waybar";
 
         vicinae.url = "github:vicinaehq/vicinae";
         nix-flatpak.url = "github:gmodena/nix-flatpak";
 	};
 
-  	outputs = {self, nixpkgs, nixpkgs-unstable, home-manager, hyprquickshot-source, vicinae, phoenix-source, downtime-source, nix-index-database, nix-flatpak}:
+  	outputs = {
+       self, nixpkgs, nixpkgs-unstable, home-manager,
+       hyprquickshot-source, vicinae, phoenix-source,
+       downtime-source, nix-index-database, nix-flatpak, waybar-source}:
   	let
 		system = "x86_64-linux";
 
@@ -40,6 +44,7 @@
 		unstable = nixpkgs-unstable.legacyPackages.${system};
 		phoenix = phoenix-source.packages.${system}.default;
 		downtime = downtime-source.packages.${system}.default;
+		waybar-flake = waybar-source.packages.${system}.default;
 		hyprquickshot-unfixed = hyprquickshot-source.packages.${system}.default;
 
 		# Fix Hyprquickshot
@@ -51,7 +56,7 @@
 	{
 		nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
 			inherit system;
-			specialArgs = { inherit unstable hyprquickshot phoenix downtime; username = "orion"; };
+			specialArgs = { inherit unstable hyprquickshot phoenix downtime waybar-flake; username = "orion"; };
 			modules = [
                 ./nixos/hardware/laptop.nix
                 ./nixos/config.nix

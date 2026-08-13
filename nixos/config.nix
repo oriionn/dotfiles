@@ -1,4 +1,4 @@
-{ config, lib, pkgs, unstable, hyprquickshot, phoenix, downtime, username, ... }:
+{ config, lib, pkgs, unstable, hyprquickshot, phoenix, downtime, username, waybar-flake, ... }:
 
 let
     home = config.users.users.${username}.home;
@@ -118,9 +118,10 @@ in
         brightnessctl
         xdg-utils
         glib
+        networkmanagerapplet
 
         # System info
-        waybar
+        waybar-flake
         phoenix # https://git.oriondev.fr/orion/phoenix
         downtime # https://git.oriondev.fr/orion/downtime
         bottom

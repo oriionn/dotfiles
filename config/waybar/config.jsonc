@@ -54,6 +54,7 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "󱚵",
     "format-disconnected": "󰖪",
+    "on-click": "nm-connection-editor",
   },
   "pulseaudio#volume": {
     // "scroll-step": 1, // %, can be a float
