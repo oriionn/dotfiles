@@ -201,7 +201,7 @@ in
         packages = with pkgs; [];
         shell = pkgs.zsh;
     };
-    home-manager.users."${username}"" = import ./home.nix;
+    home-manager.users."${username}" = import ./home.nix;
 
     # NixOS version
     system.stateVersion = "26.05";
