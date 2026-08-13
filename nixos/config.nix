@@ -162,6 +162,7 @@ in
          kdePackages.plasma-integration
     ];
     programs.zsh.enable = true;
+    
 
     services.flatpak = {
         enable = true;
@@ -178,6 +179,8 @@ in
     # Games
     programs.steam = {
         enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
     };
 
     # Ly

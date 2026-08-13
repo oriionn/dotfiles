@@ -52,7 +52,6 @@
         };
     };
 
-
     # Default apps
     xdg.mimeApps = {
         enable = true;
@@ -62,6 +61,29 @@
         };
     };
     xdg.configFile."mimeapps.list".force = true;
+
+    # Firefox profile depending DE
+    programs.firefox = {
+        enable = true;
+        languagePacks = ["fr-FR" "en-GB"];
+
+        profiles.kde = {
+            id = 0;
+            isDefault = true;
+        };
+        profiles.hyprland = {
+            id = 1;
+        };
+    };
+
+    xdg.desktopEntries.firefox.exec = ''
+        sh -c '
+            if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
+                exec firefox --name firefox --profile "$HOME/.mozilla/firefox/hyprland" "$@";
+            else
+                exec firefox --name firefox "$@";
+            fi
+        ' -- %U'';
 
     # Home Manager version
     home.stateVersion = "26.05";
