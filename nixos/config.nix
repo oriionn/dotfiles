@@ -169,7 +169,7 @@ in
         ];
         config = {
             hyprland.default = [ "hyprland" "gtk" ];
-            kde.default = [ "gtk" ]
+            kde.default = [ "gtk" ];
         };
     };
 
