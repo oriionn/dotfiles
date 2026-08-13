@@ -89,12 +89,14 @@
         vesktop
 
         # Utilities
-        waybar
         udiskie
         swaynotificationcenter
         nwg-bar
         kdePackages.dolphin
         brightnessctl
+
+        # System info
+        waybar
         phoenix # https://git.oriondev.fr/orion/phoenix
         downtime # https://git.oriondev.fr/orion/downtime
         bottom
@@ -115,6 +117,7 @@
         nodejs
         go
         gnumake
+        gcc
 
         # Fonts
         nerd-fonts.jetbrains-mono
