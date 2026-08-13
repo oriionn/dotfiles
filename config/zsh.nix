@@ -106,6 +106,7 @@
             zed = "zeditor";
 
             switch = "sudo nixos-rebuild switch --flake \"${config.home.homeDirectory}/.dotfiles?submodules=1#laptop\"";
+            hard-cleanup = "sudo ${config.home.homeDirectory}/.dotfiles/hard-cleanup.sh";
         };
     };
 
