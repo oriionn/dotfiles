@@ -1,4 +1,4 @@
-{ config, unstable ... }:
+{ config, unstable, ... }:
 
 {
     imports = [
