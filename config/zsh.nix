@@ -115,5 +115,5 @@
     };
 
     programs.fzf.enableZshIntegration = true;
-    programs.nix-index.enable = true
+    programs.nix-index.enable = true;
 }
