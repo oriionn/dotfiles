@@ -1,4 +1,4 @@
-{ config, lib, pkgs, unstable, hyprquickshot, phoenix, downtime, username, waybar-flake, fastfetchQjs, ... }:
+{ config, lib, pkgs, unstable, hyprquickshot, phoenix, downtime, username, waybar-flake, ... }:
 
 let
     home = config.users.users.${username}.home;
@@ -106,7 +106,7 @@ in
         ghostty
         git
         neovim
-        fastfetchQjs
+        fastfetch
 
         # Multimedia
         vlc
