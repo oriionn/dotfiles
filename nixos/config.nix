@@ -177,6 +177,7 @@ in
         go
         gnumake
         gcc
+        lua5_5
 
         # Fonts
         nerd-fonts.jetbrains-mono
