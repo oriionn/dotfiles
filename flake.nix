@@ -60,26 +60,21 @@
         '';
 
         # Patch Fastfetch with QuickJS
-        quickjsStatic = unstable.quickjs-ng.overrideAttrs (old: {
-            cmakeFlags = [
-                (nixpkgs.lib.cmakeBool "BUILD_SHARED_LIBS" false)
-                (nixpkgs.lib.cmakeBool "BUILD_STATIC_QJS_EXE" false)
-            ];
-        });
-
-          fastfetchQjsUnwrapped = unstable.fastfetch-unwrapped.overrideAttrs (old: {
+        fastfetchQjsUnwrapped = unstable.fastfetch-unwrapped.overrideAttrs (old: {
             buildInputs = (old.buildInputs or []) ++ [
-                quickjsStatic
+                unstable.quickjs-ng
             ];
 
             cmakeFlags = (old.cmakeFlags or []) ++ [
-                (nixpkgs.lib.cmakeBool "ENABLE_QUICKJS" true)
-                (nixpkgs.lib.cmakeOptionType "string" "BINARY_LINK_TYPE" "dynamic")
+                "-DENABLE_QUICKJS=ON"
             ];
-          });
+        });
 
         fastfetchQjs = unstable.fastfetch.override {
             fastfetch-unwrapped = fastfetchQjsUnwrapped;
+            extraRuntimeDependencies = [
+                unstable.quickjs-ng
+            ];
         };
 	in
 	{
