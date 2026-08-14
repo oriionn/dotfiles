@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
   firefoxWrapper = pkgs.writeShellScript "firefox-wrapper" ''
