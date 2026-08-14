@@ -3,7 +3,7 @@
 let
   firefoxWrapper = pkgs.writeShellScript "firefox-wrapper" ''
     if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
-      exec firefox --profile "${config.xdg.configHome}/.config/mozilla/firefox/hyprland" "$@"
+      exec firefox --profile "${config.xdg.configHome}/mozilla/firefox/hyprland" "$@"
     else
       exec firefox "$@"
     fi
