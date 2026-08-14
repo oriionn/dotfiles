@@ -16,7 +16,7 @@
             # create a symlink to `.config/hypr/hyprsplit/init.lua`.
             "hyprsplit/init" = {
                 autoLoad = false;
-                content = builtins.readFile "${hyprsplit.hyprsplitlua}/share/hyprsplit/init.lua";
+                content = builtins.readFile "${hyprsplit}/init.lua";
             };
             # Finally, use it directly in Lua.
             "hyprload" = {
@@ -24,8 +24,6 @@
                 content = ./hyprland.lua;
             };
         };
-
-
     };
 
     xdg.configFile."hypr/xdph.conf".source = ./xdph.conf;
