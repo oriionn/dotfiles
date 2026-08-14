@@ -64,4 +64,6 @@ in
             };
         };
     };
+
+    programs.zsh.shellAliases.firefox = "${firefoxWrapper}"
 }
