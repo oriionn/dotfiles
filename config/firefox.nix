@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   firefoxWrapper = pkgs.writeShellScript "firefox-wrapper" ''
     if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
-      exec firefox --profile "$HOME/.mozilla/firefox/hyprland" "$@"
+      exec firefox --profile "${config.xdg.configHome}/.config/mozilla/firefox/hyprland" "$@"
     else
       exec firefox "$@"
     fi
@@ -23,7 +23,6 @@ in
             id = 1;
         };
     };
-    xdg.configFile."mozilla/firefox/profiles.ini".force = true;
 
     xdg.desktopEntries.firefox = {
         name = "Firefox";
