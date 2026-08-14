@@ -1,7 +1,13 @@
 { ... }:
 
 let
-  ffExec = extra: ''sh -c 'if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then exec firefox --profile "$HOME/.mozilla/firefox/hyprland" ${extra} "$@"; else exec firefox ${extra} "$@"; fi' -- %U'';
+  firefoxWrapper = pkgs.writeShellScript "firefox-wrapper" ''
+    if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
+      exec firefox --profile "$HOME/.mozilla/firefox/hyprland" "$@"
+    else
+      exec firefox "$@"
+    fi
+  '';
 in
 {
     # Firefox profile depending DE
@@ -34,7 +40,7 @@ in
             "x-scheme-handler/http"
             "x-scheme-handler/https"
         ];
-        exec = ffExec "--name firefox";
+        exec = "${firefoxWrapper} --name firefox %U";
         settings = {
             StartupWMClass = "firefox";
             Version = "1.5";
@@ -42,11 +48,11 @@ in
         actions = {
             new-private-window = {
                 name = "New Private Window";
-                exec = ffExec "--private-window";
+                exec = "${firefoxWrapper} --private-window %U";
             };
             new-window = {
                 name = "New Window";
-                exec = ffExec "--new-window";
+                exec = "${firefoxWrapper} --new-window %U";
             };
             profile-manager-window = {
                 name = "Profile Manager";
