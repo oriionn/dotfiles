@@ -14,7 +14,7 @@
     };
     xdg.configFile."hypr/hyprsplit/init.lua" = {
         force = true;
-        content = builtins.readFile "${hyprsplit}/init.lua";
+        text = builtins.readFile "${hyprsplit}/init.lua";
     };
     xdg.configFile."hypr/hyprland.lua" = {
         force = true;
