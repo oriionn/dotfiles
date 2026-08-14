@@ -76,14 +76,68 @@
         };
     };
 
-    xdg.desktopEntries.firefox.exec = ''
-        sh -c '
-            if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
-                exec firefox --name firefox --profile "$HOME/.mozilla/firefox/hyprland" "$@";
-            else
-                exec firefox --name firefox "$@";
-            fi
-        ' -- %U'';
+    xdg.desktopEntries.firefox = {
+        name = "Firefox";
+        genericName = "Web Browser";
+        type = "Application";
+        icon = "firefox";
+        terminal = false;
+        startupNotify = true;
+        categories = [ "Network" "WebBrowser" ];
+        mimeType = [
+            "text/html"
+            "text/xml"
+            "application/xhtml+xml"
+            "application/vnd.mozilla.xul+xml"
+            "x-scheme-handler/http"
+            "x-scheme-handler/https"
+        ];
+
+        exec = ''
+            sh -c '
+                if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
+                    exec firefox --name firefox --profile "$HOME/.mozilla/firefox/hyprland" "$@";
+                else
+                    exec firefox --name firefox "$@";
+                fi
+            ' -- %U
+        '';
+
+        settings = {
+            StartupWMClass = "firefox";
+            Version = "1.5";
+        };
+        actions = {
+            new-private-window = {
+                name = "New Private Window";
+                exec = ''
+                    sh -c '
+                        if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
+                            exec firefox --profile "$HOME/.mozilla/firefox/hyprland" --private-window "$@";
+                        else
+                            exec firefox --private-window "$@";
+                        fi
+                    ' -- %U
+                '';
+            };
+            new-window = {
+                name = "New Window";
+                exec = ''
+                    sh -c '
+                        if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
+                            exec firefox --profile "$HOME/.mozilla/firefox/hyprland" --new-window "$@";
+                        else
+                            exec firefox --new-window "$@";
+                        fi
+                    ' -- %U
+                '';
+            };
+            profile-manager-window = {
+                name = "Profile Manager";
+                exec = "firefox --ProfileManager";
+            };
+        };
+    };
 
     # Home Manager version
     home.stateVersion = "26.05";
