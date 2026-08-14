@@ -36,7 +36,8 @@
         {
             "key": "  ├󰁹 ",
             "type": "battery",
-            "format": "{capacity}%"
+            "format": "{capacity}",
+            "percent": {"type":["num"]}
         },
         {
             "type": "packages",
