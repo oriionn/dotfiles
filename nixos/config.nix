@@ -31,14 +31,14 @@ in
         "194.242.2.2" # Mullvad
         "1.1.1.1" # Cloudflare
         "1.0.0.1" # Secondary Cloudflare
-    ]
+    ];
 
     # Keyring
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.ly.enableGnomeKeyring = true;
 
     # Polkit
-    security.polkit.enable = false;
+    security.polkit.enable = true;
 
     # Bluetooth
     hardware.bluetooth = {
