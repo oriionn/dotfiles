@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 let
-  firefoxWrapper = pkgs.writeShellScript "firefox-wrapper" ''
     firefoxWrapper = pkgs.writeShellScript "firefox-wrapper" ''
         if [[ "''${XDG_CURRENT_DESKTOP:-}" == *Hyprland* ]]; then
             profile="hyprland"
@@ -13,7 +12,6 @@ let
             --profile "${config.xdg.configHome}/mozilla/firefox/$profile" \
             "$@"
     '';
-  '';
 in
 {
     # Firefox profile depending DE
