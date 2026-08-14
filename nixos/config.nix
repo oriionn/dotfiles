@@ -26,13 +26,27 @@ in
     nixpkgs.config.allowUnfree = true;
 
     # Enable networking
-    networking.networkmanager.enable = true;
-    networking.networkmanager.dns = "none";
-    networking.nameservers = [
-        "194.242.2.2" # Mullvad
-        "1.1.1.1" # Cloudflare
-        "1.0.0.1" # Secondary Cloudflare
-    ];
+    networking.networkmanager = {
+        enable = true;
+        dns = "systemd-resolved";
+    };
+
+    services.resolved = {
+        enable = true;
+
+        settings.Resolve = {
+            DNS = [
+                "194.242.2.2#dns.mullvad.net"
+                "1.1.1.1#cloudflare-dns.com"
+                "1.0.0.1#cloudflare-dns.com"
+            ];
+
+            FallbackDNS = "";
+            Domains = "~.";
+            DNSSEC = "yes";
+            DNSOverTLS = "yes";
+        };
+    };
 
     # Keyring
     services.gnome.gnome-keyring.enable = true;
