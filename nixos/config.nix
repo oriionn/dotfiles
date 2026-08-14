@@ -107,7 +107,7 @@ in
         git
         neovim
         (unstable.fastfetch.overrideAttrs (old: {
-            buildInputs = old.buildInputs ++ [ pkgs.quickjs-ng ];
+            buildInputs = (old.buildInputs or []) ++ [ unstable.quickjs-ng ];
             cmakeFlags = (old.cmakeFlags or []) ++ [ "-DENABLE_QUICKJS=ON" ];
         }))
 
