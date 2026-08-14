@@ -6,7 +6,7 @@
   "spacing": 4, // Gaps between modules (4px)
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock", "custom/separator-media", "custom/media"],
-  "modules-right": ["pulseaudio#volume", "network", "custom/notifications", "custom/separator", "tray"],
+  "modules-right": ["pulseaudio#volume", "custom/notifications", "custom/separator", "tray"],
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {

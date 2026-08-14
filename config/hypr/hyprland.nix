@@ -11,14 +11,12 @@
 
         xwayland.enable = true;
         configType = "lua";
+
+        extraConfig = ./hyprland.lua;
     };
     xdg.configFile."hypr/hyprsplit/init.lua" = {
         force = true;
         text = builtins.readFile "${hyprsplit}/init.lua";
-    };
-    xdg.configFile."hypr/hyprland.lua" = {
-        force = true;
-        source = ./hyprland.lua;
     };
 
     xdg.configFile."hypr/xdph.conf".source = ./xdph.conf;
