@@ -27,6 +27,11 @@ in
 
     # Enable networking
     networking.networkmanager.enable = true;
+    networking.nameservers = [
+        "194.242.2.2" # Mullvad
+        "1.1.1.1" # Cloudflare
+        "1.0.0.1" # Secondary Cloudflare
+    ]
 
     # Keyring
     services.gnome.gnome-keyring.enable = true;
