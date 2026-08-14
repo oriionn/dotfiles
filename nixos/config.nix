@@ -106,10 +106,7 @@ in
         ghostty
         git
         neovim
-        (unstable.fastfetch-unwrapped.overrideAttrs (old: {
-            buildInputs = (old.buildInputs or []) ++ [ unstable.quickjs-ng ];
-            cmakeFlags = (old.cmakeFlags or []) ++ [ "-DENABLE_QUICKJS=ON" ];
-        }))
+        fastfetchQjs
 
         # Multimedia
         vlc

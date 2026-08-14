@@ -58,11 +58,34 @@
             export QT_QPA_PLATFORMTHEME=
             exec ${hyprquickshot-unfixed}/bin/hyprquickshot "$@"
         '';
+
+        # Patch Fastfetch with QuickJS
+        quickjsStatic = unstable.quickjs-ng.overrideAttrs (old: {
+            cmakeFlags = [
+                (lib.cmakeBool "BUILD_SHARED_LIBS" false)
+                (lib.cmakeBool "BUILD_STATIC_QJS_EXE" false)
+            ];
+        });
+
+          fastfetchQjsUnwrapped = unstable.fastfetch-unwrapped.overrideAttrs (old: {
+            buildInputs = (old.buildInputs or []) ++ [
+                quickjsStatic
+            ];
+
+            cmakeFlags = (old.cmakeFlags or []) ++ [
+                (lib.cmakeBool "ENABLE_QUICKJS" true)
+                (lib.cmakeOptionType "string" "BINARY_LINK_TYPE" "dynamic")
+            ];
+          });
+
+        fastfetchQjs = pkgs.fastfetch.override {
+            fastfetch-unwrapped = fastfetchQjsUnwrapped;
+        };
 	in
 	{
 		nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
 			inherit system;
-			specialArgs = { inherit unstable hyprquickshot phoenix downtime waybar-flake; username = "orion"; };
+			specialArgs = { inherit unstable hyprquickshot phoenix downtime waybar-flake fastfetchQjs; username = "orion"; };
 			modules = [
                 ./nixos/hardware/laptop.nix
                 ./nixos/config.nix
