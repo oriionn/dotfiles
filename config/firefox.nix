@@ -23,6 +23,7 @@ in
             id = 1;
         };
     };
+    xdg.configFile."mozilla/firefox/profiles.ini".force = true;
 
     xdg.desktopEntries.firefox = {
         name = "Firefox";
