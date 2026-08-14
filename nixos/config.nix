@@ -43,7 +43,7 @@ in
 
             FallbackDNS = "";
             Domains = "~.";
-            DNSSEC = "yes";
+            DNSSEC = "allow-downgrade";
             DNSOverTLS = "yes";
         };
     };
