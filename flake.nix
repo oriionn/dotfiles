@@ -78,7 +78,7 @@
             ];
           });
 
-        fastfetchQjs = pkgs.fastfetch.override {
+        fastfetchQjs = unstable.fastfetch.override {
             fastfetch-unwrapped = fastfetchQjsUnwrapped;
         };
 	in
