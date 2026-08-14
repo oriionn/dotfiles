@@ -36,9 +36,9 @@ in
 
         settings.Resolve = {
             DNS = [
-                "194.242.2.2#dns.mullvad.net"
-                "1.1.1.1#cloudflare-dns.com"
-                "1.0.0.1#cloudflare-dns.com"
+                "194.242.2.2 #dns.mullvad.net"
+                "1.1.1.1 #cloudflare-dns.com"
+                "1.0.0.1 #cloudflare-dns.com"
             ];
 
             FallbackDNS = "";
@@ -151,6 +151,7 @@ in
         xdg-utils
         glib
         networkmanagerapplet
+        unzip
 
         # System info
         waybar-flake

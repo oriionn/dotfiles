@@ -19,6 +19,7 @@
             url = "github:jamdon2/hyprquickshot";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        hyprsplit.url = "github:shezdy/hyprsplit";
 
         nix-index-database = {
             url = "github:nix-community/nix-index-database";
@@ -36,8 +37,9 @@
   	outputs = {
        self, nixpkgs, nixpkgs-unstable, home-manager,
        hyprquickshot-source, vicinae, phoenix-source,
-       downtime-source, nix-index-database, nix-flatpak, waybar-source}:
-  	let
+       downtime-source, nix-index-database, nix-flatpak,
+       waybar-source, hyprsplit
+   }: let
 		system = "x86_64-linux";
 
 		pkgs = nixpkgs.legacyPackages.${system};
@@ -66,7 +68,7 @@
                 nix-flatpak.nixosModules.nix-flatpak
 
                 {
-                    home-manager.extraSpecialArgs = { inherit unstable; };
+                    home-manager.extraSpecialArgs = { inherit unstable hyprsplit; };
                     home-manager.sharedModules = [
                         vicinae.homeManagerModules.default
                         nix-index-database.homeModules.default

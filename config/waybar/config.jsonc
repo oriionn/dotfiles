@@ -47,15 +47,15 @@
     "locale": "fr_FR.utf8",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
   },
-  "network": {
+  //"network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "",
-    "format-ethernet": "",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "󱚵",
-    "format-disconnected": "󰖪",
-    "on-click": "nm-connection-editor",
-  },
+  //  "format-wifi": "",
+  //  "format-ethernet": "",
+  //  "tooltip-format": "{ifname} via {gwaddr} ",
+  //  "format-linked": "󱚵",
+  //  "format-disconnected": "󰖪",
+  //  "on-click": "nm-connection-editor",
+  //},
   "pulseaudio#volume": {
     // "scroll-step": 1, // %, can be a float
     "format": "<span size='11000'>{icon}</span>",
