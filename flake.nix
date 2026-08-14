@@ -23,7 +23,7 @@
         hyprsplit = {
             url = "github:shezdy/hyprsplit";
             flake = false;
-        }
+        };
 
         nix-index-database = {
             url = "github:nix-community/nix-index-database";
