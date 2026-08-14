@@ -32,6 +32,7 @@ in
         "1.1.1.1" # Cloudflare
         "1.0.0.1" # Secondary Cloudflare
     ];
+    networkmanager.dns = "none";
 
     # Keyring
     services.gnome.gnome-keyring.enable = true;
