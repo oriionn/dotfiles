@@ -62,8 +62,8 @@
         # Patch Fastfetch with QuickJS
         quickjsStatic = unstable.quickjs-ng.overrideAttrs (old: {
             cmakeFlags = [
-                (lib.cmakeBool "BUILD_SHARED_LIBS" false)
-                (lib.cmakeBool "BUILD_STATIC_QJS_EXE" false)
+                (nixpkgs.lib.cmakeBool "BUILD_SHARED_LIBS" false)
+                (nixpkgs.lib.cmakeBool "BUILD_STATIC_QJS_EXE" false)
             ];
         });
 
