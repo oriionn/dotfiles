@@ -134,6 +134,7 @@ in
         phoenix # https://git.oriondev.fr/orion/phoenix
         downtime # https://git.oriondev.fr/orion/downtime
         bottom
+        mission-center
 
         # Shell
         zoxide
@@ -162,7 +163,7 @@ in
          kdePackages.plasma-integration
     ];
     programs.zsh.enable = true;
-    
+
 
     services.flatpak = {
         enable = true;
@@ -172,8 +173,8 @@ in
                 bundle = "file://${home}/.dotfiles/flatpaks/hytale/app.flatpak";
                 sha256 = lib.fileContents ../flatpaks/hytale/sha256.txt;
             }
-            "io.missioncenter.MissionCenter"
         ];
+        uninstallUnmanaged = true;
     };
 
     # Games
