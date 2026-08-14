@@ -73,8 +73,8 @@
             ];
 
             cmakeFlags = (old.cmakeFlags or []) ++ [
-                (lib.cmakeBool "ENABLE_QUICKJS" true)
-                (lib.cmakeOptionType "string" "BINARY_LINK_TYPE" "dynamic")
+                (nixpkgs.lib.cmakeBool "ENABLE_QUICKJS" true)
+                (nixpkgs.lib.cmakeOptionType "string" "BINARY_LINK_TYPE" "dynamic")
             ];
           });
 
