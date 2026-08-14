@@ -106,7 +106,10 @@ in
         ghostty
         git
         neovim
-        fastfetch
+        (fastfetch.overrideAttrs (old: {
+            buildInputs = old.buildInputs ++ [ pkgs.quickjs-ng ];
+            cmakeFlags = (old.cmakeFlags or []) ++ [ "-DENABLE_QUICKJS=ON" ];
+        }))
 
         # Multimedia
         vlc
@@ -177,7 +180,6 @@ in
         go
         gnumake
         gcc
-        lua5_5
 
         # Fonts
         nerd-fonts.jetbrains-mono
