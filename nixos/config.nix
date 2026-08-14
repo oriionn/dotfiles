@@ -106,7 +106,7 @@ in
         ghostty
         git
         neovim
-        (fastfetch.overrideAttrs (old: {
+        (unstable.fastfetch.overrideAttrs (old: {
             buildInputs = old.buildInputs ++ [ pkgs.quickjs-ng ];
             cmakeFlags = (old.cmakeFlags or []) ++ [ "-DENABLE_QUICKJS=ON" ];
         }))
