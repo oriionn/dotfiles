@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, configName, ... }:
 
 {
     home.file.".p10k.zsh" = {
@@ -107,6 +107,8 @@
 
             switch = "sudo nixos-rebuild switch --flake \"${config.home.homeDirectory}/.dotfiles?submodules=1#laptop\"";
             hard-cleanup = "sudo ${config.home.homeDirectory}/.dotfiles/hard-cleanup.sh";
+        } // lib.optionalAttrs (configName == "laptop") {
+            switch-to-windows = "systemctl reboot --boot-loader-entry=auto-windows";
         };
     };
 

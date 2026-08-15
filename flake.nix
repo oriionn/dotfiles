@@ -62,7 +62,11 @@
 	{
 		nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
 			inherit system;
-			specialArgs = { inherit unstable hyprquickshot phoenix downtime waybar-flake; username = "orion"; };
+			specialArgs = {
+			    inherit unstable hyprquickshot phoenix downtime waybar-flake;
+				username = "orion";
+				configName = "laptop";
+			};
 			modules = [
                 ./nixos/hardware/laptop.nix
                 ./nixos/config.nix
@@ -71,8 +75,11 @@
                 vicinae.nixosModules.default
                 nix-flatpak.nixosModules.nix-flatpak
 
+                ({ configName, ... }: {
+                    home-manager.extraSpecialArgs = { inherit unstable hyprsplit configName; };
+                })
+
                 {
-                    home-manager.extraSpecialArgs = { inherit unstable hyprsplit; };
                     home-manager.sharedModules = [
                         vicinae.homeManagerModules.default
                         nix-index-database.homeModules.default
