@@ -147,6 +147,7 @@ in
         obsidian
         freecad
         remmina
+        cura-appimage
 
         # Utilities
         udiskie
@@ -260,7 +261,7 @@ in
     users.users."${username}" = {
         isNormalUser = true;
         description = "${username}";
-        extraGroups = [ "networkmanager" "wheel" "docker" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" "dialout" ];
         packages = with pkgs; [];
         shell = pkgs.zsh;
     };
