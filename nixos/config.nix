@@ -153,6 +153,8 @@ in
         networkmanagerapplet
         unzip
 
+        #
+
         # System info
         waybar-flake
         phoenix # https://git.oriondev.fr/orion/phoenix
