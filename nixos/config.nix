@@ -105,9 +105,6 @@ in
         openFirewall = true;
     };
 
-    # Auto CPUFreq (managing cpu to save battery)
-    services.auto-cpufreq.enable = true;
-
     # Packages
     environment.systemPackages = with pkgs; [
         # Terminal
