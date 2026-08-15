@@ -29,6 +29,11 @@ in
     networking.networkmanager = {
         enable = true;
         dns = "systemd-resolved";
+
+        plugins = with pkgs; [
+            networkmanager-openconnect
+            networkmanager-fortisslvpn
+        ];
     };
 
     services.resolved = {
@@ -141,6 +146,7 @@ in
         penpot-desktop
         obsidian
         freecad
+        remmina
 
         # Utilities
         udiskie
@@ -149,11 +155,9 @@ in
         kdePackages.dolphin
         brightnessctl
         xdg-utils
-        glib
         networkmanagerapplet
+        glib
         unzip
-
-        #
 
         # System info
         waybar-flake
