@@ -181,6 +181,8 @@ in
         bun
         nodejs
         go
+        unstable.rustc
+        unstable.cargo
         gnumake
         gcc
 
