@@ -187,6 +187,11 @@ in
         gnumake
         gcc
 
+        # LSP
+        nixd
+        nil
+        lua-language-server
+
         # Fonts
         nerd-fonts.jetbrains-mono
         nerd-fonts.symbols-only
