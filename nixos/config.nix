@@ -94,6 +94,41 @@ in
     };
     console.keyMap = "fr";
 
+    # Udev rules
+    services.udev.extraRules = ''
+    # This rule was added by Solaar.
+    #
+    # Allows non-root users to have raw access to Logitech devices.
+    # Allowing users to write to the device is potentially dangerous
+    # because they could perform firmware updates.
+
+    ACTION == "remove", GOTO="solaar_end"
+    SUBSYSTEM != "hidraw", GOTO="solaar_end"
+
+    # USB-connected Logitech receivers and devices
+    ATTRS{idVendor}=="046d", GOTO="solaar_apply"
+
+    # Lenovo nano receiver
+    ATTRS{idVendor}=="17ef", ATTRS{idProduct}=="6042", GOTO="solaar_apply"
+
+    # Bluetooth-connected Logitech devices
+    KERNELS == "0005:046D:*", GOTO="solaar_apply"
+
+    GOTO="solaar_end"
+
+    LABEL="solaar_apply"
+
+    # Allow any seated user to access the receiver.
+    # uaccess: modern ACL-enabled udev
+    TAG+="uaccess"
+
+    # Grant members of the "plugdev" group access to receiver (useful for SSH users)
+    #MODE="0660", GROUP="plugdev"
+
+    LABEL="solaar_end"
+    # vim: ft=udevrules
+        '';
+
     # Printer
     services.printing = {
         enable = true;
@@ -159,6 +194,8 @@ in
         networkmanagerapplet
         glib
         unzip
+        solaar
+        dnsmasq # Libvirtd network
 
         # System info
         waybar-flake
@@ -245,13 +282,13 @@ in
     };
 
     # Fingerprint scanner
-    services.fprintd.enable = true;
-    security.pam.services.login.rules.auth.fprintd.settings = {
-        timeout = 5;
-    };
-    security.pam.services.hyprlock = {
-        fprintAuth = false;
-    };
+    # services.fprintd.enable = true;
+    # security.pam.services.login.rules.auth.fprintd.settings = {
+    #     timeout = 5;
+    # };
+    # security.pam.services.hyprlock = {
+    #     fprintAuth = false;
+    # };
 
     # Docker
     virtualisation.docker = {
@@ -262,16 +299,24 @@ in
         };
     };
 
+    # Virutal Machines
+    virtualisation.libvirtd = {
+        enable = true;
+        onBoot = "start";
+        onShutdown = "shutdown";
+    };
+    programs.virt-manager.enable = true;
+
     # Users
     users.users."${username}" = {
         isNormalUser = true;
         description = "${username}";
-        extraGroups = [ "networkmanager" "wheel" "docker" "dialout" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" "dialout" "libvirtd" ];
         packages = with pkgs; [];
         shell = pkgs.zsh;
     };
     home-manager.users."${username}" = import ./home.nix;
 
     # NixOS version
-    system.stateVersion = "26.05";
+    system.stateVersion = "26.05"; 
 }
