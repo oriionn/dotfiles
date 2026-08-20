@@ -228,6 +228,7 @@ in
         nixd
         nil
         lua-language-server
+        rust-analyzer
 
         # Fonts
         nerd-fonts.jetbrains-mono
@@ -267,6 +268,7 @@ in
         settings = {
             xsessions = null;
             shell = false;
+            numlock = true;
         };
     };
 
@@ -318,5 +320,5 @@ in
     home-manager.users."${username}" = import ./home.nix;
 
     # NixOS version
-    system.stateVersion = "26.05"; 
+    system.stateVersion = "26.05";
 }
