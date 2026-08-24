@@ -30,12 +30,12 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        phoenix-source.url = "github:oriionn/phoenix";
-        downtime-source.url = "github:oriionn/downtime";
-        waybar-source.url = "github:Alexays/Waybar";
+        phoenix-source.url = "git+https://git.oriondev.fr/orion/phoenix.git";
+        downtime-source.url = "git+https://git.oriondev.fr/orion/downtime.git";
 
-        vicinae.url = "github:vicinaehq/vicinae";
+        waybar-source.url = "github:Alexays/Waybar";
         nix-flatpak.url = "github:gmodena/nix-flatpak";
+        vicinae.url = "github:vicinaehq/vicinae";
 	};
 
   	outputs = {
