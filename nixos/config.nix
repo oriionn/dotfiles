@@ -259,6 +259,7 @@ in
         unstable.cargo
         gnumake
         gcc
+        python3
 
         # LSP
         nixd
