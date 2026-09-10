@@ -268,7 +268,7 @@ in
         nil
         lua-language-server
         rust-analyzer
-        roslyn
+        roslyn-ls
         csharp-ls
 
         # Fonts
