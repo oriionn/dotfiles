@@ -260,7 +260,7 @@ in
         gnumake
         gcc
         python3
-        dotnet-sdk
+        dotnet-sdk_10
         mono # For school
 
         # LSP
