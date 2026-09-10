@@ -268,6 +268,8 @@ in
         nil
         lua-language-server
         rust-analyzer
+        roslyn
+        csharp-ls
 
         # Fonts
         nerd-fonts.jetbrains-mono
