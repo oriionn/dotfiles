@@ -261,6 +261,7 @@ in
         gcc
         python3
         dotnet-sdk
+        mono # For school
 
         # LSP
         nixd
