@@ -45,7 +45,7 @@ hl.monitor({
 ---------------------
 
 local terminal    = "ghostty"
-local fileManager = "dolfin"
+local fileManager = "dolphin"
 local menu        = "vicinae open"
 
 
