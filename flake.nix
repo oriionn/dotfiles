@@ -30,7 +30,7 @@
 
         phoenix.url = "git+https://git.oriondev.fr/orion/phoenix.git";
         downtime.url = "git+https://git.oriondev.fr/orion/downtime.git";
-        waybar.url = "github:Alexays/Waybar";
+        # waybar.url = "github:Alexays/Waybar";
         nix-flatpak.url = "github:gmodena/nix-flatpak";
         vicinae.url = "github:vicinaehq/vicinae";
     };
@@ -58,7 +58,7 @@
                 inputs.nix-flatpak.nixosModules.nix-flatpak
 
                 ({ configName, ... }: {
-                    home-manager.extraSpecialArgs = { inherit inputs configName; };
+                    home-manager.extraSpecialArgs = { inherit inputs configName system; };
                 })
 
                 {

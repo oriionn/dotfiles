@@ -78,7 +78,7 @@
                     formatter = [
                         { code_action = "source.fixAll.ruff"; }
                         { code_action = "source.organizeImports.ruff"; }
-                        { langage_server = { name = "ruff"; }; }
+                        { language_server = { name = "ruff"; }; }
                     ];
                 };
             };

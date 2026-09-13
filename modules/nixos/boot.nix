@@ -13,7 +13,7 @@
         themePackages = with pkgs; [
             (plymouth-blahaj-theme.overrideAttrs (old: {
                 postInstall = (old.postInstall or "") + ''
-                    install -Dm644 ${../assets/boot.png} \
+                    install -Dm644 ${../../assets/boot.png} \
                         $out/share/plymouth/themes/blahaj/watermark.png
 
                     substituteInPlace \

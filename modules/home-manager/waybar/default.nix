@@ -1,9 +1,10 @@
-{ lib, ... }:
+{ lib, inputs, system, ... }:
 
 {
     programs.waybar = {
         enable = true;
-        settings = {
+#	package = inputs.waybar.packages.${system}.default;
+        settings.mainBar = {
             layer = "top";
             position = "top";
 

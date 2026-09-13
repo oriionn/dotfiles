@@ -4,7 +4,7 @@
     environment.systemPackages = with pkgs; [
         penpot-desktop
         obsidian
-        freecad
+#        freecad
         remmina
         cura-appimage
     ];
