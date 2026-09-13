@@ -104,6 +104,11 @@ in
         };
     };
 
+    # LID Switch
+    services.logind.lidSwitch = "ignore";
+    services.logind.lidSwitchDocked = "ignore";
+    services.logind.lidSwitchExternalPower = "ignore";
+
     # Region settings
     time.timeZone = "Europe/Paris";
     i18n.defaultLocale = "fr_FR.UTF-8";

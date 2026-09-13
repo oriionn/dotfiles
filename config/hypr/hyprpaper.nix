@@ -10,11 +10,11 @@
         settings = {
             wallpaper = [
                 {
-                    monitor = "DP-3";
+                    monitor = "DP-9";
                     path = "${config.home.homeDirectory}/.dotfiles/assets/wallpapers/screen1.jpg";
                 }
                 {
-                    monitor = "HDMI-A-1";
+                    monitor = "DP-11";
                     path = "${config.home.homeDirectory}/.dotfiles/assets/wallpapers/screen2.png";
                 }
                 {
