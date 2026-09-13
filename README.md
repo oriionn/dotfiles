@@ -1,6 +1,5 @@
 # My dotfiles
 This repo is dedicated to the configurations I currently use on my desktop.
-t
 
 ## Installation
 1. Install NixOS with Minimal installation
