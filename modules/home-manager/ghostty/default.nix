@@ -14,7 +14,7 @@
             font-size = "13";
 
             background-blur = true;
-            background-opacity = "0.7";
+            # background-opacity = "0.7";
 
             custom-shader = [
                 "${./shaders/cursor_tail.glsl}"
