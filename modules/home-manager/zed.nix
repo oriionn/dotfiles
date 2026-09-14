@@ -10,7 +10,10 @@
                         javascript.updateImportsOnFileMove.enabled = "always";
                     };
                     enable_lsp_tasks = true;
-                    binary.path = "vtsls";
+                    binary = {
+                        arguments = ["--stdio"];
+                        path = "vtsls";
+                    };
                 };
 
                 lua-language-server.binary.path = "lua-language-server";
@@ -20,6 +23,7 @@
                 };
 
                 ruff.binary.path = "ruff";
+                package-version-server.binary.path = "package-version-server";
             };
 
             cli_default_open_behavior = "new_window";

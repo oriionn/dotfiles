@@ -23,5 +23,6 @@
         csharp-ls
         ruff
         vtsls
+        package-version-server
     ];
 }
