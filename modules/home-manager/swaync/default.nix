@@ -13,7 +13,7 @@
             control-center-margin-top = 13;
             control-center-margin-right = 14;
             control-center-margin-left = 0;
-            control-center-width = 800;
+            control-center-width = 500;
             control-center-height = 1000;
 
             notification-2fa-action = true;
@@ -21,7 +21,7 @@
             notification-icon-size = 48;
             notification-body-image-height = 160;
             notification-body-image-width = 200;
-            notification-window-width = 800;
+            notification-window-width = 500;
 
             timeout = 6;
             timeout-low = 3;
