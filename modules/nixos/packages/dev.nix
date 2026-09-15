@@ -13,6 +13,8 @@
         python3
         dotnet-sdk_10
         mono
+        php
+        phpPackages.composer
 
         # LSP
         nixd
@@ -24,5 +26,6 @@
         ruff
         vtsls
         package-version-server
+        phpactor
     ];
 }
