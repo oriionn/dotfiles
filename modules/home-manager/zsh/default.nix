@@ -107,6 +107,7 @@
 
             switch = "sudo nixos-rebuild switch --flake \"${config.home.homeDirectory}/.dotfiles?submodules=1#laptop\"";
             hard-cleanup = "sudo ${../../../hard-cleanup.sh}";
+            clear = "pyroclear";
         } // lib.optionalAttrs (configName == "laptop") {
             reboot-to-windows = "systemctl reboot --boot-loader-entry=auto-windows";
         };

@@ -33,6 +33,7 @@
         # waybar.url = "github:Alexays/Waybar";
         nix-flatpak.url = "github:gmodena/nix-flatpak";
         vicinae.url = "github:vicinaehq/vicinae";
+        pyroclear.url = "github:shreyanth-sureshkrishnaa/pyroclear";
     };
 
     outputs = inputs: let
