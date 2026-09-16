@@ -110,6 +110,7 @@
             clear = "pyroclear";
         } // lib.optionalAttrs (configName == "laptop") {
             reboot-to-windows = "systemctl reboot --boot-loader-entry=auto-windows";
+            sshome = "ssh -4 -o ProxyCommand=\"socat - SOCKS5:localhost:1055:%h:%p\"";
         };
     };
 

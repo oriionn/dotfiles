@@ -15,5 +15,7 @@
         dnsmasq # Libvirtd network
         ffmpeg-full
         imagemagick
+        nmap
+        socat
     ];
 }

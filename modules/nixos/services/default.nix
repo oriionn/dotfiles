@@ -4,5 +4,6 @@
         ./printing.nix
         ./logind.nix
         ./udev.nix
+        ./tailscale.nix
     ];
 }
