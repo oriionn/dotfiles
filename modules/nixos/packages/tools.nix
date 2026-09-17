@@ -7,5 +7,6 @@
 #        freecad
         remmina
         cura-appimage
+        deskreen
     ];
 }

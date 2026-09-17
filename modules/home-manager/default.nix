@@ -16,5 +16,6 @@
         ./hyprlock.nix
         ./vicinae.nix
         ./zed.nix
+        ./portals.nix
     ];
 }
