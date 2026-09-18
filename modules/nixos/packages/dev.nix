@@ -27,5 +27,7 @@
         vtsls
         package-version-server
         phpactor
+        clang
+        gopls
     ];
 }

@@ -25,6 +25,8 @@
                 ruff.binary.path = "ruff";
                 package-version-server.binary.path = "package-version-server";
                 phpactor.binary.path = "phpactor";
+                gopls.binary.path = "gopls";
+                clangd.binary.path = "clangd";
             };
 
             cli_default_open_behavior = "new_window";
