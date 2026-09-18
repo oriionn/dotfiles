@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+    networking.firewall.allowedTCPPorts = [
+        3131 # Deskreen
+    ];
+
     # Network Manager
     networking.networkmanager = {
         enable = true;
