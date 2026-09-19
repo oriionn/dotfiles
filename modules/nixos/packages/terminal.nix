@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
     environment.systemPackages = with pkgs; [
@@ -6,5 +6,6 @@
         git
         neovim
         fastfetch
+        inputs.ofetch.packages.${stdenv.hostPlatform.system}.default
     ];
 }

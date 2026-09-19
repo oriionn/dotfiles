@@ -30,6 +30,7 @@
 
         phoenix.url = "git+https://git.oriondev.fr/orion/phoenix.git";
         downtime.url = "git+https://git.oriondev.fr/orion/downtime.git";
+        ofetch.url = "git+https://git.oriondev.fr/orion/ofetch.git";
         # waybar.url = "github:Alexays/Waybar";
         nix-flatpak.url = "github:gmodena/nix-flatpak";
         vicinae.url = "github:vicinaehq/vicinae";
