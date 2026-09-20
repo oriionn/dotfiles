@@ -323,11 +323,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1789923433,
-        "narHash": "sha256-6owpkYNtbP0ocLTsercc7wzWNf8fBugsjWlE8I8I86g=",
+        "lastModified": 1789923659,
+        "narHash": "sha256-xzHQ5I83lohL4n0j3jGSG47Ju95t/XdU0D0pdoUIabs=",
         "ref": "refs/heads/master",
-        "rev": "2f77a4eecc71817e7337b6b7df7b3d6fb608ca96",
-        "revCount": 8,
+        "rev": "84ad2a0001859e308c81beda082167fe7200b9d2",
+        "revCount": 9,
         "type": "git",
         "url": "https://git.oriondev.fr/orion/ofetch.git"
       },
