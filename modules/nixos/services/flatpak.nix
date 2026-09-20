@@ -9,6 +9,7 @@
                 bundle = "file://${../../../flatpaks/hytale/app.flatpak}";
                 sha256 = lib.fileContents ../../../flatpaks/hytale/sha256.txt;
             }
+            "org.vinegarhq.Sober"
         ];
         uninstallUnmanaged = true;
     };
