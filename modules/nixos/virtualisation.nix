@@ -1,3 +1,5 @@
+{ pkgs, config, ... }:
+
 {
     # Docker
     virtualisation.docker = {
@@ -15,4 +17,13 @@
         onShutdown = "shutdown";
     };
     programs.virt-manager.enable = true;
+
+    # Waydroid
+    virtualisation.waydroid = {
+        enable = true;
+        package = if config.networking.nftables.enable
+            then pkgs.waydroid-nftables
+            else pkgs.waydroid;
+    };
+    environment.systemPackages = [ pkgs.wl-clipboard ];
 }

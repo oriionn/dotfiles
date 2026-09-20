@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+    # Firewall
+    networking.nftables.enable = true;
+    networking.firewall.backend = "nftables";
     networking.firewall.allowedTCPPorts = [
         3131 # Deskreen
     ];
