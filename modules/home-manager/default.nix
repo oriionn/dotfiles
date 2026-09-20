@@ -9,6 +9,7 @@
         ./swaync
         ./waybar
         ./zsh
+        ./bash
         ./browsers
 
         ./hypridle.nix
@@ -17,5 +18,6 @@
         ./vicinae.nix
         ./zed.nix
         ./portals.nix
+        ./aliases.nix
     ];
 }
