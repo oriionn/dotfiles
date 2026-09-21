@@ -34,6 +34,7 @@
         clang
         gopls
         astro-language-server
+        tinymist
     ];
 
     nixpkgs.config.android_sdk.accept_license = true;

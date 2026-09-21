@@ -28,6 +28,17 @@
                 gopls.binary.path = "gopls";
                 clangd.binary.path = "clangd";
                 astro-language-server.path = "astro-language-server";
+
+                tinymist = {
+                    initialization_options.preview.background.enabled = true;
+                    settings = {
+                        exportPdf = "onSave";
+                        outputPath = "$root/$name.preview";
+                        formatterMode = "typstyle";
+                    };
+
+                    path = "tinymist";
+                };
             };
 
             cli_default_open_behavior = "new_window";
