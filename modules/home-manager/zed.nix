@@ -27,6 +27,7 @@
                 phpactor.binary.path = "phpactor";
                 gopls.binary.path = "gopls";
                 clangd.binary.path = "clangd";
+                astro-language-server.path = "astro-language-server";
             };
 
             cli_default_open_behavior = "new_window";

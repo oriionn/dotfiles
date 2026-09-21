@@ -15,6 +15,10 @@
         mono
         php
         phpPackages.composer
+        dart
+        flutter
+        androidsdk
+        android-studio-full
 
         # LSP
         nixd
@@ -29,5 +33,8 @@
         phpactor
         clang
         gopls
+        astro-language-server
     ];
+
+    nixpkgs.config.android_sdk.accept_license = true;
 }
