@@ -6,5 +6,6 @@
         ./kdeconnect.nix
         ./zsh.nix
         ./obs-studio.nix
+        ./nixld.nix
     ];
 }
