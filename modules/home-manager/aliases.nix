@@ -7,7 +7,7 @@ let
         DEFAULT_FLAGS=(-Wall -Wextra -Wpedantic -Werror)
         SCHOOL_FLAGS=(-std=c17)
 
-        args=()
+        args=("''${DEFAULT_FLAGS[@]}")
         output_set=false
         source_file=""
 
