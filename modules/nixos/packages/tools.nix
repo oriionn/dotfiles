@@ -8,7 +8,6 @@
         remmina
         cura-appimage
         deskreen
-        binaryninja-free
         ghidra
     ];
 }

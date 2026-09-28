@@ -17,5 +17,6 @@
         imagemagick
         nmap
         socat
+        psmisc
     ];
 }

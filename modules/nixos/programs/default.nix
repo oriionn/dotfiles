@@ -7,5 +7,6 @@
         ./zsh.nix
         ./obs-studio.nix
         ./nixld.nix
+        ./binaryninja.nix
     ];
 }

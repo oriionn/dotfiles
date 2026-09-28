@@ -5,5 +5,6 @@
         vlc
         delfin
         feishin
+        kdePackages.kdenlive
     ];
 }

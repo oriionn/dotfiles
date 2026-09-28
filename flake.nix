@@ -28,6 +28,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        binaryninja = {
+            url = "github:jchv/nix-binary-ninja";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         phoenix.url = "git+https://git.oriondev.fr/orion/phoenix.git";
         downtime.url = "git+https://git.oriondev.fr/orion/downtime.git";
         ofetch.url = "git+https://git.oriondev.fr/orion/ofetch.git";
@@ -35,6 +40,7 @@
         nix-flatpak.url = "github:gmodena/nix-flatpak";
         vicinae.url = "github:vicinaehq/vicinae";
         pyroclear.url = "github:shreyanth-sureshkrishnaa/pyroclear";
+        nixvim.url = "github:nix-community/nixvim";
     };
 
     outputs = inputs: let
@@ -58,6 +64,8 @@
                 inputs.home-manager.nixosModules.home-manager
                 inputs.vicinae.nixosModules.default
                 inputs.nix-flatpak.nixosModules.nix-flatpak
+                inputs.binaryninja.nixosModules.binaryninja
+                inputs.nixvim.nixosModules.nixvim
 
                 ({ configName, ... }: {
                     home-manager.extraSpecialArgs = { inherit inputs configName system; };
@@ -67,6 +75,7 @@
                     home-manager.sharedModules = [
                         inputs.vicinae.homeManagerModules.default
                         inputs.nix-index-database.homeModules.default
+                        inputs.nixvim.homeModules.nixvim
                     ];
                 }
 

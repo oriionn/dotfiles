@@ -11,6 +11,7 @@
         ./zsh
         ./bash
         ./browsers
+        ./neovim
 
         ./hypridle.nix
         ./hyprpaper.nix
