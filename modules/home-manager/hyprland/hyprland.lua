@@ -418,3 +418,11 @@ hl.window_rule({
     },
     fullscreen = true
 })
+
+hl.window_rule({
+    name = "aniimo-fullscreen",
+    match = {
+        class = "steam_app_4126040"
+    },
+    fullscreen = true
+})
