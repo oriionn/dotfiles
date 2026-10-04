@@ -426,3 +426,29 @@ hl.window_rule({
     },
     fullscreen = true
 })
+
+-- All AVD
+hl.window_rule({
+    name = "avd-common",
+
+    match = {
+        initial_class = "^Emulator$",
+        initial_title = "^Emulator$",
+    },
+
+    float = true,
+    suppress_event = "x11configurerequest",
+})
+
+-- Only Android Screen
+hl.window_rule({
+    name = "avd-phone-size",
+
+    match = {
+        class = "^Emulator$",
+        title = "^Android Emulator %- .+:[0-9]+$",
+    },
+
+    min_size = { 420, 840 },
+    max_size = { 420, 840 },
+})

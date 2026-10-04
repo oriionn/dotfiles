@@ -1,5 +1,20 @@
 { pkgs, ... }:
 
+let
+    androidComposition = pkgs.androidenv.composeAndroidPackages {
+        numLatestPlatformVersions = 5;
+        buildToolsVersions = [ "35.0.0" "latest" ];
+
+        includeEmulator = "if-supported";
+        includeSystemImages = "if-supported";
+
+        includeCmake = true;
+        cmakeVersions = [ "3.22.1" "latest" ];
+
+        includeNDK = true;
+        ndkVersions = [ "28.2.13676358" ];
+    };
+in
 {
     environment.systemPackages = with pkgs; [
         zed-editor
@@ -17,8 +32,8 @@
         phpPackages.composer
         dart
         flutter
-        androidsdk
-        android-studio-full
+        androidComposition.androidsdk
+        (android-studio.withSdk androidComposition.androidsdk)
 
         # LSP
         nixd
@@ -38,4 +53,5 @@
     ];
 
     nixpkgs.config.android_sdk.accept_license = true;
+    programs.java.enable = true;
 }

@@ -1,5 +1,6 @@
 {
     nixpkgs.config.allowUnfree = true;
+
     imports = [
         ./shell.nix
         ./terminal.nix

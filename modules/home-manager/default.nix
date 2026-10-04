@@ -20,5 +20,6 @@
         ./zed.nix
         ./portals.nix
         ./aliases.nix
+        ./android.nix
     ];
 }
