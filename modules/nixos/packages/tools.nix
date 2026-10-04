@@ -9,5 +9,7 @@
         cura-appimage
         deskreen
         ghidra
+        kdePackages.skanlite
+        gimp
     ];
 }

@@ -11,4 +11,11 @@
         nssmdns4 = true;
         openFirewall = true;
     };
+
+    hardware.sane = {
+        enable = true;
+        extraBackends = with pkgs; [
+            sane-airscan
+        ];
+    };
 }

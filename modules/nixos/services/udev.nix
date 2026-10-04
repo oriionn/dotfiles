@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
     services.udev.extraRules = ''
     # This rule was added by Solaar.
@@ -32,4 +34,6 @@
     LABEL="solaar_end"
     # vim: ft=udevrules
         '';
+
+    services.udev.packages = with pkgs; [ sane-airscan ];
 }
