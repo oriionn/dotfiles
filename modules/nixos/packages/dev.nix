@@ -34,6 +34,7 @@ in
         flutter
         androidComposition.androidsdk
         (android-studio.withSdk androidComposition.androidsdk)
+        mars-mips
 
         # LSP
         nixd
