@@ -3,7 +3,7 @@
 let
     androidComposition = pkgs.androidenv.composeAndroidPackages {
         numLatestPlatformVersions = 5;
-        buildToolsVersions = [ "35.0.0" "latest" ];
+        buildToolsVersions = [ "36.0.0" "latest" ];
 
         includeEmulator = "if-supported";
         includeSystemImages = "if-supported";
