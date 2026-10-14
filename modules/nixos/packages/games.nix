@@ -14,5 +14,8 @@
             ];
         })
         steam
+        supertuxkart
+        supertuxkart-server
+        supertux
     ];
 }
