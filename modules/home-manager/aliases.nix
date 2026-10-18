@@ -44,6 +44,7 @@ let
 
         exec "$REAL_GCC" "''${args[@]}"
     '';
+     mkTsSsh = port: "ssh -4 -o ProxyCommand=\"socat - SOCKS5:localhost:${toString port}:%h:%p\"";
 in
 {
     home.shellAliases = {
@@ -59,9 +60,10 @@ in
         hard-cleanup = "sudo ${../../hard-cleanup.sh}";
         gcc = "${gcc}/bin/gcc";
         standroid = "emulator -avd Android36 &";
+        core-ssh = mkTsSsh 1056;
     } // lib.optionalAttrs (configName == "laptop") {
         reboot-to-windows = "systemctl reboot --boot-loader-entry=auto-windows";
-        sshome = "ssh -4 -o ProxyCommand=\"socat - SOCKS5:localhost:1055:%h:%p\"";
+        sshome = mkTsSsh 1055;
         ofetch = "ofetch -t=\"    Framework  \"";
     };
 }
