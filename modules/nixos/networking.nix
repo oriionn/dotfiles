@@ -35,4 +35,18 @@
             DNSOverTLS = "yes";
         };
     };
+
+    # Firefox Proxy
+    environment.etc."proxy.pac".text = ''
+        function FindProxyForURL(url, host) {
+            if (
+                host == "seb.amicalecore.org" ||
+                host == "pma.amicalecore.org"
+            ) {
+                return "SOCKS5 127.0.0.1:1056";
+            }
+
+            return "DIRECT";
+        }
+    '';
 }
