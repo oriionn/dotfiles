@@ -452,3 +452,18 @@ hl.window_rule({
     min_size = { 420, 840 },
     max_size = { 420, 840 },
 })
+
+-- GTA V
+hl.window_rule({
+    name  = "gtav-fullscreen",
+    match = { initial_class = "^(steam_app_271590)$" },
+    fullscreen = true,
+    immediate  = true,
+})
+
+-- GTA V Launcher
+hl.window_rule({
+    name  = "gtav-launcher-float",
+    match = { initial_title = "^(GTA V Launcher)$" },
+    float = true,
+})

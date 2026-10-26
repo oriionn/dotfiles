@@ -11,5 +11,7 @@
         ghidra
         kdePackages.skanlite
         gimp
+        screen
+        picocom
     ];
 }
