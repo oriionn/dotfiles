@@ -18,5 +18,6 @@
         nmap
         socat
         psmisc
+        gh
     ];
 }
