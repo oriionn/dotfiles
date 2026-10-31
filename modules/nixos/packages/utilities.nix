@@ -19,5 +19,6 @@
         socat
         psmisc
         gh
+        bubblewrap
     ];
 }
