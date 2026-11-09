@@ -52,6 +52,10 @@
                 bindkey '^[[A' history-search-backward
                 bindkey '^[[B' history-search-forward
             '')
+
+            (lib.mkOrder 2000 ''
+                export FLUTTER_ROOT="$(dirname "$(dirname "$(readlink -f "$(command -v flutter)")")")"
+            '')
         ];
 
         # Plugins

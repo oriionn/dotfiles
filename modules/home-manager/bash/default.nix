@@ -23,6 +23,10 @@
             (lib.mkOrder 1000 ''
                 [[ ! ''${BLE_VERSION-} ]] || ble-attach
             '')
+
+            (lib.mkOrder 2000 ''
+                 export FLUTTER_ROOT="$(dirname "$(dirname "$(readlink -f "$(command -v flutter)")")")"
+            '')
         ];
     };
 

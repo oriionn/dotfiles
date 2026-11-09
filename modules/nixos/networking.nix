@@ -15,7 +15,6 @@
 
         plugins = with pkgs; [
             networkmanager-openconnect
-            networkmanager-fortisslvpn
         ];
     };
 

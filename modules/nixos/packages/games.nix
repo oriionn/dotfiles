@@ -6,7 +6,7 @@
             additionalPrograms = [ ffmpeg ];
 
             jdks = [
-                zulu8
+                temurin-bin-8
                 zulu17
                 zulu21
                 zulu25
