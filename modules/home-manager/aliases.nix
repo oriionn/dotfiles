@@ -50,7 +50,7 @@ in
     home.shellAliases = {
         fastfetch = "fastfetch --kitty ${../../assets/nbix.png}";
         fetch = "fastfetch";
-        ls = "eza --icons --group-directories-first --hyperlink";
+        ls = "eza --icons --group-directories-first --hyperlink auto";
         grep = "grep --color=auto";
         cd = "z";
         zed = "zeditor";

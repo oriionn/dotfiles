@@ -18,7 +18,7 @@
             "hyprland/workspaces" = {
                 format = "{icon}";
                 # 1: 1, 2: 2,... 11: 1, 12: 2...
-                format-icons = lib.genAttrs (map toString (lib.range 1 30))
+                format-icons = lib.genAttrs (map toString (lib.range 1 70))
                     (n: toString (lib.mod (lib.toInt n - 1) 10 + 1));
 
                 show-empty = false;

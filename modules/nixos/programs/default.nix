@@ -8,5 +8,6 @@
         ./obs-studio.nix
         ./nixld.nix
         ./binaryninja.nix
+        ./solaar.nix
     ];
 }

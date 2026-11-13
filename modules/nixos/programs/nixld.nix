@@ -7,10 +7,10 @@
         libraries = with pkgs; [
             libxcb
             libxcb-cursor
-            xorg.xcbutilwm
-            xorg.xcbutilimage
-            xorg.xcbutilkeysyms
-            xorg.xcbutilrenderutil
+            libxcb-wm
+            libxcb-image
+            libxcb-keysyms
+            libxcb-render-util
             qt6.qtwayland
         ];
     };

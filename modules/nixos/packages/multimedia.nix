@@ -6,6 +6,6 @@
         delfin
         feishin
         kdePackages.kdenlive
-        libreoffice-fresh
+        libreoffice-stable
     ];
 }

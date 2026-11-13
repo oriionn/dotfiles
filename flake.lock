@@ -451,6 +451,26 @@
         "url": "https://git.oriondev.fr/orion/phoenix.git"
       }
     },
+    "pivotd": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794483090,
+        "narHash": "sha256-LC3WvQiuJmpPIZot2MgJIlcAfQk3yNkuE1kA8ULTq5I=",
+        "ref": "refs/heads/main",
+        "rev": "29623c537a99472d0a3b3341c19d9964f7c2f3a9",
+        "revCount": 1,
+        "type": "git",
+        "url": "https://git.oriondev.fr/orion/pivotd"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.oriondev.fr/orion/pivotd"
+      }
+    },
     "pyroclear": {
       "inputs": {
         "nixpkgs": "nixpkgs_6"
@@ -482,6 +502,7 @@
         "nixvim": "nixvim",
         "ofetch": "ofetch",
         "phoenix": "phoenix",
+        "pivotd": "pivotd",
         "pyroclear": "pyroclear",
         "vicinae": "vicinae"
       }

@@ -36,6 +36,11 @@
         phoenix.url = "git+https://git.oriondev.fr/orion/phoenix.git";
         downtime.url = "git+https://git.oriondev.fr/orion/downtime.git";
         ofetch.url = "git+https://git.oriondev.fr/orion/ofetch.git";
+        pivotd = {
+            url = "git+https://git.oriondev.fr/orion/pivotd";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         # waybar.url = "github:Alexays/Waybar";
         nix-flatpak.url = "github:gmodena/nix-flatpak";
         vicinae.url = "github:vicinaehq/vicinae";
@@ -66,6 +71,7 @@
                 inputs.nix-flatpak.nixosModules.nix-flatpak
                 inputs.binaryninja.nixosModules.binaryninja
                 inputs.nixvim.nixosModules.nixvim
+                inputs.pivotd.nixosModules.default
 
                 ({ configName, ... }: {
                     home-manager.extraSpecialArgs = { inherit inputs configName system; };

@@ -10,6 +10,7 @@
         ./nix.nix
         ./userdirs.nix
         ./swap.nix
+        ./hardware.nix
 
         # Folder
         ./services

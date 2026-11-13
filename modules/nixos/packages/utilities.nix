@@ -11,7 +11,6 @@
         networkmanagerapplet
         glib
         unzip
-        solaar
         dnsmasq # Libvirtd network
         ffmpeg-full
         imagemagick

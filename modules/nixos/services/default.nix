@@ -5,5 +5,6 @@
         ./logind.nix
         ./udev.nix
         ./tailscale.nix
+        ./pivotd.nix
     ];
 }
