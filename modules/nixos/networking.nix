@@ -35,6 +35,12 @@
         };
     };
 
+    environment.etc."dnssec-trust-anchors.d/custom.negative".text = ''
+        altcha.org
+        git.unistra.fr
+        gitlab.u-strasbg.fr
+    '';
+
     # Firefox Proxy
     environment.etc."proxy.pac".text = ''
         function FindProxyForURL(url, host) {
