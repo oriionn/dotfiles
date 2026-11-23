@@ -34,8 +34,12 @@
         };
 
         initContent = lib.mkMerge [
+            (lib.mkOrder 90 ''
+                (( ''${+aliases[ofetch]} )) || alias ofetch='ofetch -t="    Framework  "'
+            '')
+
             (lib.mkOrder 100 ''
-                ofetch -t="    Framework  "
+                ofetch
             '')
 
             (lib.mkOrder 500 ''

@@ -21,5 +21,6 @@
         ./portals.nix
         ./aliases.nix
         ./android.nix
+        ./distrobox.nix
     ];
 }

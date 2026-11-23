@@ -61,9 +61,10 @@ in
         gcc = "${gcc}/bin/gcc";
         standroid = "emulator -avd Android36 &";
         core-ssh = mkTsSsh 1056;
+
+        debian = "distrobox enter debian";
     } // lib.optionalAttrs (configName == "laptop") {
         reboot-to-windows = "systemctl reboot --boot-loader-entry=auto-windows";
         sshome = mkTsSsh 1055;
-        ofetch = "ofetch -t=\"    Framework  \"";
     };
 }

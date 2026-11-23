@@ -10,6 +10,9 @@
         };
     };
 
+    # Podman
+    virtualisation.podman.enable = true;
+
     # Virtual Machines
     virtualisation.libvirtd = {
         enable = true;

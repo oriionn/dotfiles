@@ -19,5 +19,6 @@
         psmisc
         gh
         bubblewrap
+        hyperfine
     ];
 }
