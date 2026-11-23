@@ -6,7 +6,7 @@ let
     files = config.home.file;
 
     debianZshPre = ''
-        alias ofetch='ofetch -t="   Debian  "'
+        alias ofetch='ofetch -t="   Debian  " --preset=lesbian --distro debian'
     '';
 
     debianZshPost = ''
