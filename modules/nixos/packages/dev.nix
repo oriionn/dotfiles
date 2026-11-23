@@ -68,7 +68,8 @@ in
         ruff
         vtsls
         package-version-server
-        phpactor
+        # phpactor
+        phpantom-lsp
         clang
         gopls
         astro-language-server

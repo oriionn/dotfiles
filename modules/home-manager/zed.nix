@@ -24,7 +24,7 @@
 
                 ruff.binary.path = "ruff";
                 package-version-server.binary.path = "package-version-server";
-                phpactor.binary.path = "phpactor";
+                phpantom.binary.path = "phpantom_lsp";
                 gopls.binary.path = "gopls";
                 clangd.binary.path = "clangd";
                 astro-language-server.path = "astro-language-server";
@@ -98,6 +98,15 @@
                         { code_action = "source.fixAll.ruff"; }
                         { code_action = "source.organizeImports.ruff"; }
                         { language_server = { name = "ruff"; }; }
+                    ];
+                };
+                PHP = {
+                    language_servers = [
+                        "phpantom"
+                        "!intelephense"
+                        "!phpactor"
+                        "!phptools"
+                        "..."
                     ];
                 };
             };

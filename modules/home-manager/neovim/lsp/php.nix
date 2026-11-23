@@ -1,5 +1,5 @@
 {
-    programs.nixvim.plugins.lsp.servers.phpactor = {
+    programs.nixvim.plugins.lsp.servers.phpantom_lsp = {
         enable = true;
     };
 }
